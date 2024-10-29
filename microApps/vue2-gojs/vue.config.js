@@ -1,6 +1,6 @@
 const packageName = require('./package.json').name
 const { defineConfig } = require('@vue/cli-service')
-console.log('packageName', packageName)
+
 module.exports = defineConfig({
   transpileDependencies: true,
   lintOnSave: false,

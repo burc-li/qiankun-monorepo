@@ -3,21 +3,23 @@ import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
 
 const router = useRouter()
-const routes = ref([])
-routes.value = router.getRoutes().filter(route => !route.meta.hidden)
 
 // 监听当前路由变化
 const currentRoute = ref({})
 watch(
   () => router.currentRoute.value,
   (value) => {
-    currentRoute.value = value
+    console.log('>>>>>', value)
+    currentRoute.value = value.path
   },
 )
 
 const navigateTo = path => {
-  router.push({ path })
+  window.history.pushState({}, '', path)
 }
+
+import routes from '@/routes.js'
+console.log('routes', routes)
 </script>
 
 <template>
