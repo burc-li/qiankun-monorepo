@@ -5,4 +5,5 @@ import microApps  from './microApps.js'
 registerMicroApps(
   microApps
 )
+
 start({})

@@ -15,11 +15,13 @@ import Header from '@/components/Header.vue'
 <style lang="less">
 .main-app {
   height: 100vh;
-  #micro-container{
+  #micro-container {
     position: relative;
     height: calc(100% - @nav-height);
     overflow: auto;
   }
-  div[id^='__qiankun_microapp_wrapper_'] { height: 100%; }
+  div[id^='__qiankun_microapp_wrapper_'] {
+    height: 100%;
+  }
 }
 </style>

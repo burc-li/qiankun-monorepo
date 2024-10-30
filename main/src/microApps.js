@@ -19,12 +19,12 @@ export default [
     loader,
     props: {},
   },
-  // {
-  //   name: 'vue3-pdf',
-  //   entry: '//localhost:8003',
-  //   activeRule: '/pdf',
-  //   container: '#micro-container',
-  //   loader,
-  //   props: {},
-  // },
+  {
+    name: 'vue3-pdf',
+    entry: '//localhost:8003',
+    activeRule: '/pdf',
+    container: '#micro-container',
+    loader,
+    props: {},
+  },
 ]
