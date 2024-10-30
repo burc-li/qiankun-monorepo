@@ -36,10 +36,12 @@ console.log('routes', routes)
 
 <style lang="less" scoped>
 .header-menu {
+  position: relative;
   display: flex;
   box-shadow:
     0 1px 0 0 #0000001a,
     0 1px 5px 0 #0000001a;
+  z-index: 999;
   .menu-item {
     box-sizing: border-box;
     display: inline-block;
