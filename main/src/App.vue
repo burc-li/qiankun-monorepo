@@ -6,7 +6,7 @@ import Header from '@/components/Header.vue'
 <template>
   <div class="app">
     <Header></Header>
-    <div class="content">
+    <div id="container">
       <RouterView />
     </div>
   </div>
@@ -16,9 +16,8 @@ import Header from '@/components/Header.vue'
 .app {
   // width: 100vw;
   // height: 100vh;
-  .content{
-    padding: 14px 16px;
-    // height: calc(100% - @nav-height);
+  #container{
+    height: calc(100% - @nav-height);
     overflow: auto;
   }
 }

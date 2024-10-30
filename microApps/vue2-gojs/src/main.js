@@ -19,12 +19,22 @@ Vue.use(ViewUI)
 Vue.use(VueRouter)
 Vue.use(globalComp)
 
-const router = createRouter()
+function render(props) {
+  const router = createRouter()
 
-new Vue({
-  router,
-  render: h => h(App),
-}).$mount('#app')
+  const app = new Vue({
+    router,
+    render: h => h(App),
+  })
+
+  const container = props.container
+  app.$mount(container ? container.querySelector('#app') : document.getElementById('app'))
+}
+
+if (!window.__POWERED_BY_QIANKUN__) {
+  console.log('>>>独立启动')
+  render({})
+}
 
 /**
  * bootstrap 只会在微应用初始化的时候调用一次，下次微应用重新进入时会直接调用 mount 钩子，不会再重复触发 bootstrap。
@@ -37,7 +47,9 @@ export async function bootstrap() {
 /**
  * 应用每次进入都会调用 mount 方法，通常我们在这里触发应用的渲染方法
  */
-export async function mount(props) {}
+export async function mount(props) {
+  render(props)
+}
 
 /**
  * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例

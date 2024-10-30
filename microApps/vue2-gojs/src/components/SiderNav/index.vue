@@ -1,10 +1,6 @@
 <template>
   <Sider class="sider-nav-wrap">
     <Menu active-name="1-2" theme="dark" width="auto" :open-names="['1']">
-      <MenuItem name="1" to="/article">
-        <Icon type="ios-navigate"></Icon>
-        长列表
-      </MenuItem>
       <Submenu name="2">
         <template slot="title">
           <Icon type="ios-keypad"></Icon>

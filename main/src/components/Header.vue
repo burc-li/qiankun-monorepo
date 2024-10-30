@@ -9,8 +9,7 @@ const currentRoute = ref({})
 watch(
   () => router.currentRoute.value,
   (value) => {
-    console.log('>>>>>', value)
-    currentRoute.value = value.path
+    currentRoute.value = value
   },
 )
 
@@ -26,7 +25,7 @@ console.log('routes', routes)
   <div class="header-menu">
     <span
       class="menu-item"
-      :class="{ active: currentRoute.path === route.path }"
+      :class="{ active: currentRoute.path?.startsWith(route.path)}"
       v-for="route in routes"
       :key="route.path"
       @click="navigateTo(route.path)"
