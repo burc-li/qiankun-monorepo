@@ -14,6 +14,7 @@
 import { ref, onBeforeMount } from 'vue'
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
+import { myBase64 } from '@/utils/contant.js'
 
 // html2canvas + jsPDF 下载PDF
 // 下载一页PDF（A4纸）
@@ -156,7 +157,7 @@ const number = 20
 const pageList = ref([])
 const paragraph = {
   text: 'html2canvas 是一个 HTML 渲染器。该脚本允许你直接在用户浏览器截取页面或部分网页的“屏幕截屏”，屏幕截图是基于 DOM，因此生成的图片并不一定 100% 一致，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图，因此生成的图片并不一定 100% 一致，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图',
-  src: new URL('@/assets/images/001.jpg', import.meta.url).href,
+  src: myBase64,
 }
 onBeforeMount(() => {
   pageList.value.length = 0

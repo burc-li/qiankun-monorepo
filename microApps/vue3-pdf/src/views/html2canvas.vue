@@ -3,13 +3,14 @@
     <div class="btn" @click="capture">使用 html2canvas 进行屏幕截屏</div>
     <section v-for="(item, index) in pageList" :key="index">
       <p class="text">{{ index }} - {{ item.text }}</p>
-      <img class="image" :src="item.src" />
+      <img class="image" crossorigin="anonymous" :src="item.src" />
     </section>
   </div>
 </template>
 <script setup>
 import { ref, onBeforeMount } from 'vue'
 import html2canvas from 'html2canvas'
+import { myBase64 } from '@/utils/contant.js'
 
 // 使用 html2canvas 进行屏幕截屏
 // html2canvas(element, options)
@@ -26,7 +27,7 @@ const number = 2
 const pageList = ref([])
 const paragraph = {
   text: 'html2canvas 是一个 HTML 渲染器。该脚本允许你直接在用户浏览器截取页面或部分网页的“屏幕截屏”，屏幕截图是基于 DOM，因此生成的图片并不一定 100% 一致，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图',
-  src: new URL('@/assets/images/001.jpg', import.meta.url).href,
+  src: myBase64,
 }
 
 onBeforeMount(() => {
