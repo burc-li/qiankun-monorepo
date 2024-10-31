@@ -16,13 +16,4 @@ export default [
   js.configs.recommended,
   ...pluginVue.configs['flat/essential'],
   skipFormatting,
-
-  /**
-   * javascript 规则
-   */
-  {
-    rules: {
-      'no-console': 'error',
-    },
-  },
 ]

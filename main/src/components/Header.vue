@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue'
 import { useRouter } from 'vue-router'
+import routes from '@/routes.js'
 
 const router = useRouter()
 
@@ -17,15 +18,13 @@ const navigateTo = path => {
   window.history.pushState({}, '', path)
 }
 
-import routes from '@/routes.js'
-console.log('routes', routes)
 </script>
 
 <template>
-  <div class="header-menu">
+  <div class="main-header header-menu">
     <span
       class="menu-item"
-      :class="{ active: currentRoute.path?.startsWith(route.path)}"
+      :class="{ active: route.path.split('/')[1] === currentRoute?.href?.split('/')[1]}"
       v-for="route in routes"
       :key="route.path"
       @click="navigateTo(route.path)"
@@ -35,7 +34,7 @@ console.log('routes', routes)
 </template>
 
 <style lang="less" scoped>
-.header-menu {
+.main-header.header-menu {
   position: relative;
   display: flex;
   box-shadow:

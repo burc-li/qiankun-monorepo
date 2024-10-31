@@ -2,6 +2,7 @@
   "name": "vue-pdf",
   "version": "0.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "build": "vite build",
     "lint": "eslint . --fix",
@@ -25,7 +26,7 @@
     "less-loader": "^12.2.0",
     "prettier": "^3.3.3",
     "vite": "^5.4.8",
+    "vite-plugin-qiankun": "^1.0.15",
     "vue-cli-plugin-style-resources-loader": "~0.1.5"
-  },
-  "type": "module"
+  }
 }

@@ -22,6 +22,9 @@ import Header from '@/components/Header.vue'
   }
   div[id^='__qiankun_microapp_wrapper_'] {
     height: 100%;
+    > #app{
+      height: 100%;
+    }
   }
 }
 </style>

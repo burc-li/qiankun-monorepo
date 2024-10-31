@@ -16,7 +16,7 @@ import Header from '@/components/Header.vue'
 .micro-app {
   height: 100%;
   .content{
-    height: calc(100% - @nav-height);
+    height: calc(100% - @sub-nav-height);
     overflow: auto;
   }
 }

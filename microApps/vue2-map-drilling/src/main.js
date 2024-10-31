@@ -10,7 +10,6 @@ let app
 let router
 function render (props) {
   router = createRouter()
-
   app = new Vue({
     router,
     render: h => h(App),

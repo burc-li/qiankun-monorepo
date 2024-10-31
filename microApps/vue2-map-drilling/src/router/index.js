@@ -8,5 +8,6 @@ export default () => {
   return new VueRouter({
     routes,
     mode: 'history',
+    base: '/map/',
   })
 }

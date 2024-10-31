@@ -11,7 +11,6 @@ const currentRoute = ref({})
 watch(
   () => router.currentRoute.value,
   (value) => {
-    console.log('pdf_currentRoute',value)
     currentRoute.value = value
   },
 )
@@ -43,8 +42,8 @@ const navigateTo = path => {
   .menu-item {
     box-sizing: border-box;
     display: inline-block;
-    line-height: @nav-height;
-    height: @nav-height;
+    line-height: @sub-nav-height;
+    height: @sub-nav-height;
     padding: 0 16px;
     cursor: pointer;
     &:hover {
