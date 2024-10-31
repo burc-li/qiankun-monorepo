@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "lint:fix": "eslint . --fix",
+    "lint": "eslint . --fix",
     "dev": "vite",
     "format": "prettier --write src/",
     "preview": "vite preview"

@@ -13,9 +13,10 @@ export default {
 </script>
 
 <style lang="less">
-.app {
+.micro-app {
   height: 100%;
   overflow: hidden;
+  background-color: #f5f7f9;
   .fade-enter {
     opacity: 0;
     transform: translateX(10px);

@@ -26,7 +26,7 @@ export default {
   // background: no-repeat 2% 5% url('../../assets/images/bg.png');
   // background-color:azure;
   h2 {
-    color: #fff;
+    color: #333;
     font-size: 24px;
     margin-top: 16px;
     margin-bottom: 28px;

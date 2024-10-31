@@ -1,5 +1,5 @@
 <script setup>
-import { ref, watch } from 'vue'
+import { ref, watch, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 import routes from '@/routes.js'
 
@@ -9,7 +9,7 @@ const router = useRouter()
 const currentRoute = ref({})
 watch(
   () => router.currentRoute.value,
-  (value) => {
+  value => {
     currentRoute.value = value
   },
 )
@@ -18,13 +18,21 @@ const navigateTo = path => {
   window.history.pushState({}, '', path)
 }
 
+onMounted(
+  setTimeout(() => {
+    console.log('routes[0].path', routes[0].path)
+    window.history.pushState({}, '', routes[0].path)
+  }, 0)
+)
 </script>
 
 <template>
   <div class="main-header header-menu">
     <span
       class="menu-item"
-      :class="{ active: route.path.split('/')[1] === currentRoute?.href?.split('/')[1]}"
+      :class="{
+        active: route.path.split('/')[1] === currentRoute?.href?.split('/')[1],
+      }"
       v-for="route in routes"
       :key="route.path"
       @click="navigateTo(route.path)"

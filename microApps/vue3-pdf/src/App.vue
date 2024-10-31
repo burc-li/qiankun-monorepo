@@ -15,6 +15,7 @@ import Header from '@/components/Header.vue'
 <style lang="less" scoped>
 .micro-app {
   height: 100%;
+  background-color: #f5f7f9;
   .content {
     height: calc(100% - @sub-nav-height);
     overflow: auto;
