@@ -1,3 +1,5 @@
+import './public-path.js'
+
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './App.vue'
@@ -8,8 +10,6 @@ import '@/assets/styles/global.less'
 
 import ViewUI from 'view-design'
 import 'view-design/dist/styles/iview.css'
-
-import './public-path.js'
 import defineFigureGenerator from '@/utils/figures.js'
 
 defineFigureGenerator()
