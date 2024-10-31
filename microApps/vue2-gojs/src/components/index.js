@@ -7,7 +7,7 @@
 const requireContext = require.context(
   './',
   true,
-  /index.vue$/,
+  /index.vue$/
 )
 
 export default Vue => {

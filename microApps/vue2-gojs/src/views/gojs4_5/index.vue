@@ -61,17 +61,17 @@ export default {
           BandedTreeLayout, // custom layout is defined above
           {
             angle: HORIZONTAL ? 0 : 90,
-            arrangement: HORIZONTAL ? go.TreeLayout.ArrangementVertical : go.TreeLayout.ArrangementHorizontal,
-          },
+            arrangement: HORIZONTAL ? go.TreeLayout.ArrangementVertical : go.TreeLayout.ArrangementHorizontal
+          }
         ),
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       myDiagram.nodeTemplate = $(
         go.Node,
         go.Panel.Auto,
         $(go.Shape, 'Rectangle', { fill: 'white' }),
-        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key'))
       )
       // There should be at most a single object of this category.
       // This Part will be modified by BandedTreeLayout.commitLayers to display visual "bands"
@@ -99,13 +99,13 @@ export default {
                 textAlign: 'center',
                 wrap: go.TextBlock.None,
                 font: 'bold 11pt sans-serif',
-                background: $(go.Brush, 'Linear', { 0: 'aqua', 1: go.Brush.darken('aqua') }),
+                background: $(go.Brush, 'Linear', { 0: 'aqua', 1: go.Brush.darken('aqua') })
               },
               new go.Binding('text'),
               // always bind "width" because the angle does the rotation
               new go.Binding('width', 'bounds', function (r) {
                 return HORIZONTAL ? r.width : r.height
-              }),
+              })
             ),
             $(
               go.Shape,
@@ -115,10 +115,10 @@ export default {
               }),
               new go.Binding('fill', 'itemIndex', function (i) {
                 return i % 2 === 0 ? 'whitesmoke' : go.Brush.darken('whitesmoke')
-              }).ofObject(),
-            ),
-          ),
-        }),
+              }).ofObject()
+            )
+          )
+        })
       )
       myDiagram.linkTemplate = $(go.Link, $(go.Shape)) // simple black line, no arrowhead needed
       // define the tree node data
@@ -133,8 +133,8 @@ export default {
             { text: 'Two' },
             { text: 'Three' },
             { text: 'Four' },
-            { text: 'Five' },
-          ],
+            { text: 'Five' }
+          ]
         },
         // these are the regular nodes in the TreeModel
         { key: 'root' },
@@ -146,11 +146,11 @@ export default {
         { key: 'fourB', parent: 'threeD' },
         { key: 'fourC', parent: 'twoC' },
         { key: 'fourD', parent: 'fourB' },
-        { key: 'twoD', parent: 'root' },
+        { key: 'twoD', parent: 'root' }
       ]
       myDiagram.model = new go.TreeModel(nodearray)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

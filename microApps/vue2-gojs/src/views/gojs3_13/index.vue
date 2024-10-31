@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -51,7 +51,7 @@ export default {
         'Auto',
         {
           selectionAdorned: true, // don't bother with any selection adornment
-          selectionChanged: onSelectionChanged,
+          selectionChanged: onSelectionChanged
         }, // 在 Part.isSelected 改变后调用
         new go.Binding('location', 'loc', go.Point.parse),
         $(go.Shape, 'RoundedRectangle', { name: 'Icon', fill: 'lightgray', strokeWidth: 2 }),
@@ -62,21 +62,21 @@ export default {
             'Auto',
             $(go.Shape, 'RoundedRectangle', { fill: null, stroke: 'dodgerblue', strokeWidth: 4 }),
             // Placeholder占位符，获取成员部件边界的并集的大小和位置
-            $(go.Placeholder),
-          ),
-        },
+            $(go.Placeholder)
+          )
+        }
       )
 
       const nodeDataArray = [
         { key: 'Alpha', loc: '0 0' },
-        { key: 'Beta', loc: '200 50' },
+        { key: 'Beta', loc: '200 50' }
       ]
       const linkDataArray = [{ from: 'Alpha', to: 'Beta' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
 
       diagram.select(diagram.findNodeForKey('Beta'))
-    },
-  },
+    }
+  }
 }
 </script>
 

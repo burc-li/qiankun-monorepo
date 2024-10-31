@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.add(
         $(
@@ -36,8 +36,8 @@ export default {
           { position: new go.Point(0, 0), background: 'lightgray' },
           $(go.TextBlock, '(-50,50)', { position: new go.Point(-50, 50), background: 'lightgreen' }),
           $(go.TextBlock, '(50, 50)', { position: new go.Point(50, 50), background: 'lightgreen' }),
-          $(go.TextBlock, '(0, 100)', { position: new go.Point(0, 100), background: 'lightgreen' }),
-        ),
+          $(go.TextBlock, '(0, 100)', { position: new go.Point(0, 100), background: 'lightgreen' })
+        )
       )
       diagram.add(
         $(
@@ -48,8 +48,8 @@ export default {
           $(go.TextBlock, 'left', { background: 'lightgreen', alignment: go.Spot.Left }),
           $(go.TextBlock, 'center', { background: 'lightgreen', alignment: go.Spot.Center }),
           $(go.TextBlock, 'right', { background: 'lightgreen', alignment: go.Spot.Right }),
-          $(go.TextBlock, 'stretch', { background: 'lightgreen', stretch: go.GraphObject.Fill }),
-        ),
+          $(go.TextBlock, 'stretch', { background: 'lightgreen', stretch: go.GraphObject.Fill })
+        )
       )
       diagram.add(
         $(
@@ -60,8 +60,8 @@ export default {
           $(go.Shape, { width: 30, fill: 'lightgreen', height: 50, alignment: go.Spot.Top }),
           $(go.Shape, { width: 30, fill: 'lightgreen', height: 50, alignment: go.Spot.Center }),
           $(go.Shape, { width: 30, fill: 'lightgreen', height: 50, alignment: go.Spot.Bottom }),
-          $(go.Shape, { width: 30, fill: 'lightgreen', stretch: go.GraphObject.Fill }),
-        ),
+          $(go.Shape, { width: 30, fill: 'lightgreen', stretch: go.GraphObject.Fill })
+        )
       )
       diagram.add(
         $(
@@ -69,7 +69,7 @@ export default {
           'Spot',
           {
             position: new go.Point(530, 0),
-            background: 'lightgray',
+            background: 'lightgray'
             // alignment: go.Spot.Center,
             // alignmentFocusName: 'Main',
           },
@@ -78,27 +78,27 @@ export default {
           $(go.TextBlock, 'TL', {
             background: 'yellow',
             alignment: new go.Spot(0.8, 0.5, 0, 0),
-            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0),
+            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0)
           }),
           $(go.TextBlock, 'TR', {
             background: 'yellow',
             alignment: go.Spot.TopRight,
-            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0),
+            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0)
           }),
           $(go.TextBlock, 'BL', {
             background: 'yellow',
             alignment: go.Spot.BottomLeft,
-            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0),
+            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0)
           }),
           $(go.TextBlock, 'BR', {
             background: 'yellow',
             alignment: go.Spot.BottomRight,
-            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0),
-          }),
+            alignmentFocus: new go.Spot(0.5, 0.5, 0, 0)
+          })
 
           // NOTE: the main element isn't first, so it must be declared by setting isPanelMain to true
           // $(go.Shape, 'Rectangle', {}, { fill: '#de5e60', width: 100, height: 50 }),
-        ),
+        )
       )
       diagram.add(
         $(
@@ -126,12 +126,12 @@ export default {
             $(go.TextBlock, 'row 2 col 2', { row: 2, column: 2, margin: 2 }),
             $(go.TextBlock, 'Three', { row: 3, column: 0, stroke: 'green', margin: 2 }),
             $(go.TextBlock, 'row 3 col 1', { row: 3, column: 1, margin: 2 }),
-            $(go.TextBlock, 'row 3 col 2', { row: 3, column: 2, margin: 2 }),
-          ),
-        ),
+            $(go.TextBlock, 'row 3 col 2', { row: 3, column: 2, margin: 2 })
+          )
+        )
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

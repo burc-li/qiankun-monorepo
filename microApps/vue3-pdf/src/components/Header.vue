@@ -10,7 +10,7 @@ routes.value = router.getRoutes().filter(route => !route.meta.hidden)
 const currentRoute = ref({})
 watch(
   () => router.currentRoute.value,
-  (value) => {
+  value => {
     currentRoute.value = value
   },
 )

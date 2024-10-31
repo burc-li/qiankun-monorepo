@@ -19,7 +19,7 @@ export default {
   props: {},
   data () {
     return {
-      diagram: null,
+      diagram: null
     }
   },
   mounted () {
@@ -31,7 +31,7 @@ export default {
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
         'undoManager.isEnabled': true,
-        scrollMargin: 500,
+        scrollMargin: 500
       })
       diagram.grid.visible = true
       this.diagram = diagram
@@ -54,13 +54,13 @@ export default {
           locationSpot: go.Spot.Center,
           resizeAdornmentTemplate: resizeTemplate,
           // rotateAdornmentTemplate: rotateAdornmentTemplate,
-          selectionAdornmentTemplate: nodeSelectionTemplate,
+          selectionAdornmentTemplate: nodeSelectionTemplate
         },
         $(
           go.Panel,
           'Auto',
           {
-            margin: new go.Margin(0, 0, 10, 0),
+            margin: new go.Margin(0, 0, 10, 0)
           },
           $(
             go.Shape,
@@ -69,7 +69,7 @@ export default {
               strokeWidth: 2,
               fill: $(go.Brush, 'Linear', { 0.0: 'white', 1.0: '#de5e60' }),
               desiredSize: new go.Size(80, 80),
-              parameter1: 99,
+              parameter1: 99
             },
             new go.Binding('figure', 'fig'),
             new go.Binding('width', '', (data, item) => {
@@ -84,11 +84,11 @@ export default {
               const spot1 = geometry ? geometry.spot1 : go.Spot.TopLeft
               const spot2 = geometry ? geometry.spot2 : go.Spot.BottomRight
               return mainElement.width
-            }),
+            })
           ),
-          $(go.TextBlock, 'new', { alignment: go.Spot.TopLeft, background: '#de5e60' }),
+          $(go.TextBlock, 'new', { alignment: go.Spot.TopLeft, background: '#de5e60' })
         ),
-        $(go.TextBlock, { textAlign: 'center', width: 80 }, new go.Binding('text', 'fig')),
+        $(go.TextBlock, { textAlign: 'center', width: 80 }, new go.Binding('text', 'fig'))
       )
 
       const nodeDataArray = [
@@ -105,14 +105,14 @@ export default {
         { fig: 'B-Flow' },
         { fig: 'B-FlowGroup' },
         { fig: 'RoundRectangleLackTop' },
-        { fig: 'RoundRectangleLackBottom' },
+        { fig: 'RoundRectangleLackBottom' }
       ]
       diagram.model = new go.Model(nodeDataArray)
     },
     _setToolManager () {
       const toolManager = this.diagram.toolManager
       this.diagram.toolManager = Object.assign(toolManager, {
-        rotatingTool: new RotateMultipleTool(),
+        rotatingTool: new RotateMultipleTool()
       })
       console.log('diagram', this.diagram)
     },
@@ -124,36 +124,36 @@ export default {
         $(go.Placeholder),
         this.makeResizeObj({
           alignment: go.Spot.TopLeft,
-          cursor: 'nw-resize',
+          cursor: 'nw-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.Top,
-          cursor: 'n-resize',
+          cursor: 'n-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.TopRight,
-          cursor: 'ne-resize',
+          cursor: 'ne-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.Left,
-          cursor: 'w-resize',
+          cursor: 'w-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.Right,
-          cursor: 'e-resize',
+          cursor: 'e-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.BottomLeft,
-          cursor: 'sw-resize',
+          cursor: 'sw-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.Bottom,
-          cursor: 's-resize',
+          cursor: 's-resize'
         }),
         this.makeResizeObj({
           alignment: go.Spot.BottomRight,
-          cursor: 'se-resize',
-        }),
+          cursor: 'se-resize'
+        })
       )
     },
     _getRotateAdornmentTemplate () {
@@ -162,8 +162,8 @@ export default {
 
         $(go.Picture, {
           source: require('@/assets/images/rotating.png'),
-          desiredSize: new go.Size(15, 15),
-        }),
+          desiredSize: new go.Size(15, 15)
+        })
       )
     },
     _getNodeSelectionTemplate () {
@@ -176,9 +176,9 @@ export default {
           stroke: 'orange',
           strokeWidth: 2,
           opacity: 0.7,
-          cursor: 'move',
+          cursor: 'move'
         }),
-        $(go.Placeholder),
+        $(go.Placeholder)
       )
     },
     makeResizeObj ({ alignment, cursor }) {
@@ -193,10 +193,10 @@ export default {
         },
         mouseLeave (e, obj) {
           obj.fill = '#fff'
-        },
+        }
       })
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

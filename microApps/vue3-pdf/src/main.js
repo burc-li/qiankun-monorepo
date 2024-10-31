@@ -5,7 +5,7 @@ import {
 
 import { createApp } from 'vue'
 import App from './App.vue'
-import createRouter from './router';
+import createRouter from './router'
 import './assets/index.css'
 import './assets/variable.less'
 
@@ -25,7 +25,7 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
   render({})
   const ele = document.querySelector('.micro-app')
   ele.style.height = '100vh'
-}else{
+} else {
   renderWithQiankun({
     mount(props) {
       render(props)
@@ -41,5 +41,3 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
     },
   })
 }
-
-

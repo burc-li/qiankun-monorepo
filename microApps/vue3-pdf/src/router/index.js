@@ -2,7 +2,6 @@ import { createRouter, createWebHistory } from 'vue-router'
 import { qiankunWindow } from 'vite-plugin-qiankun/dist/helper'
 
 export default () => {
-  
   const base = qiankunWindow.__POWERED_BY_QIANKUN__ ? '/pdf/' : '/'
 
   return new createRouter({

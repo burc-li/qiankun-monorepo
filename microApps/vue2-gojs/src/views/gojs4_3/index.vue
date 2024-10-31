@@ -26,7 +26,7 @@ export default {
     return {
       diagram: null,
       currDragNode: null,
-      dragProcessList: [],
+      dragProcessList: []
     }
   },
   mounted () {
@@ -38,7 +38,7 @@ export default {
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
         'undoManager.isEnabled': true,
-        maxSelectionCount: 1,
+        maxSelectionCount: 1
       })
       this.diagram = diagram
       window.diagram = diagram
@@ -67,7 +67,7 @@ export default {
           $(go.RowColumnDefinition, {
             row: 1,
             separatorStrokeWidth: 2,
-            separatorStroke: 'black',
+            separatorStroke: 'black'
           }),
 
           $(
@@ -78,18 +78,18 @@ export default {
               columnSpan: 3,
               font: 'bold 16px sans-serif',
               editable: true,
-              margin: new go.Margin(2, 0, 2, 0),
+              margin: new go.Margin(2, 0, 2, 0)
             },
-            new go.Binding('text', 'name'),
+            new go.Binding('text', 'name')
           ),
           $(
             go.Placeholder,
             { row: 1, column: 0 },
             new go.Binding('margin', 'margin', function (margin) {
               return marginParse(margin)
-            }),
-          ),
-        ),
+            })
+          )
+        )
       )
       const childGroupTemplate = $(
         go.Group,
@@ -99,7 +99,7 @@ export default {
           go.Panel,
           'Auto',
           $(go.Shape, 'RectangleLackBottom', { fill: 'white', strokeWidth: 2, desiredSize: new go.Size(400, 24) }),
-          $(go.TextBlock, '', { alignment: go.Spot.Center }, new go.Binding('text', 'name')),
+          $(go.TextBlock, '', { alignment: go.Spot.Center }, new go.Binding('text', 'name'))
         ),
         $(go.Shape, {
           name: 'layoutBox',
@@ -146,8 +146,8 @@ export default {
             if (!lastOne || !hasFalse) return
             this.circularLayout('545 50')
             grp.diagram.clearSelection()
-          },
-        }),
+          }
+        })
       )
 
       const groupTemplateMap = new go.Map()
@@ -166,7 +166,7 @@ export default {
         {
           location: new go.Point(0, 0),
           locationObjectName: '',
-          locationSpot: go.Spot.Center,
+          locationSpot: go.Spot.Center
         },
         {
           // 在此对象上按下鼠标左键/右键一段时间后执行的事件
@@ -194,11 +194,11 @@ export default {
             if (!lastOne || !hasFalse) return
             this.circularLayout('545 50')
             grp.diagram.clearSelection()
-          },
+          }
         },
         new go.Binding('desiredSize', 'size', go.Size.parse),
         $(go.Shape, 'Rectangle', { fill: 'white' }, new go.Binding('figure', 'fig'), new go.Binding('fill', 'fill')),
-        $(go.TextBlock, new go.Binding('text', 'name')),
+        $(go.TextBlock, new go.Binding('text', 'name'))
       )
       return nodeTemplate
     },
@@ -214,7 +214,7 @@ export default {
           isGroup: true,
           group: 'A',
           category: 'child',
-          margin: '20,20,20,20',
+          margin: '20,20,20,20'
         },
         { key: 'A_1_0', name: '0', group: 'A_1', fig: 'Ellipse', fill: '#f9d2de', size: '50 30' },
         { key: 'A_1_1', name: '1', group: 'A_1', fig: 'DoubleCircular', fill: '#ffeca9', size: '50 50' },
@@ -234,8 +234,8 @@ export default {
           isGroup: true,
           group: 'B',
           category: 'child',
-          margin: '20,20,20,20',
-        },
+          margin: '20,20,20,20'
+        }
       ]
       // 范围[3-15]
       const random = getRandom(12, 3)
@@ -250,7 +250,7 @@ export default {
           fig: widthRandom % 3 === 0 ? 'DoubleCircular' : 'Ellipse',
           fill: go.Brush.randomColor(),
           size: `${widthRandom} ${heightRandom}`,
-          isEntered: true,
+          isEntered: true
         }
       })
       nodeDataArray.push(...childList)
@@ -273,8 +273,8 @@ export default {
       const list = new go.List().addAll(nodeList)
       const enteredlist = list.filter(item => item.data.isEntered)
       myCircularLayout.doLayout(enteredlist)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

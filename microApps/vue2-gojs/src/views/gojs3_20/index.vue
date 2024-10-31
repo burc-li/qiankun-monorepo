@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -74,8 +74,8 @@ export default {
           // layerName发生改变时
           layerChanged: function (p, oldLayer, newLayer) {
             if (newLayer !== null) p.elt(1).text = newLayer.name
-          },
-        },
+          }
+        }
       )
 
       const array = []
@@ -101,8 +101,8 @@ export default {
         array.push(data)
       }
       diagram.model.nodeDataArray = array
-    },
-  },
+    }
+  }
 }
 </script>
 

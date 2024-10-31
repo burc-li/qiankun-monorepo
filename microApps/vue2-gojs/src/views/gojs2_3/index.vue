@@ -32,7 +32,7 @@ export default {
       // 视图
       const myDiagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       // 模型
@@ -42,7 +42,7 @@ export default {
         { key: 'B', parent: 'A', name: '华为', img: img02 },
         { key: 'C', parent: 'A', name: '荣耀', img: img03 },
         { key: 'D', parent: 'B', name: 'Mate40', img: img04 },
-        { key: 'E', parent: 'B', name: 'P50', img: img05 },
+        { key: 'E', parent: 'B', name: 'P50', img: img05 }
       ]
 
       // 添加模型
@@ -64,15 +64,15 @@ export default {
           go.TextBlock,
           'default text',
           { margin: 12, stroke: 'white', font: 'bold 16px sans-serif' },
-          new go.Binding('text', 'name'),
-        ),
+          new go.Binding('text', 'name')
+        )
       )
 
       // 添加布局
       // define a TreeLayout that flows from top to bottom
       myDiagram.layout = $(go.TreeLayout, { angle: 90, layerSpacing: 40 })
-    },
-  },
+    }
+  }
 }
 </script>
 

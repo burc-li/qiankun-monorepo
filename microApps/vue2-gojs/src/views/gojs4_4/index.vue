@@ -19,7 +19,7 @@ export default {
   props: {},
   data () {
     return {
-      diagram: null,
+      diagram: null
     }
   },
   mounted () {
@@ -30,7 +30,7 @@ export default {
       // 视图
       this.diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       this.diagram.grid.visible = false
 
@@ -51,7 +51,7 @@ export default {
           $(go.RowColumnDefinition, {
             row: 1,
             separatorStrokeWidth: 2,
-            separatorStroke: 'black',
+            separatorStroke: 'black'
           }),
 
           $(
@@ -62,18 +62,18 @@ export default {
               columnSpan: 3,
               font: 'bold 16px sans-serif',
               editable: true,
-              margin: new go.Margin(2, 0, 2, 0),
+              margin: new go.Margin(2, 0, 2, 0)
             },
-            new go.Binding('text', 'name'),
+            new go.Binding('text', 'name')
           ),
           $(
             go.Placeholder,
             { row: 1, column: 0 },
             new go.Binding('margin', 'margin', function (margin) {
               return marginParse(margin)
-            }),
-          ),
-        ),
+            })
+          )
+        )
       )
       const childGroupTemplate = $(
         go.Group,
@@ -82,14 +82,14 @@ export default {
           go.Panel,
           'Auto',
           $(go.Shape, 'RectangleLackBottom', { fill: 'white', strokeWidth: 2, desiredSize: new go.Size(400, 24) }),
-          $(go.TextBlock, '', { alignment: go.Spot.Center }, new go.Binding('text', 'name')),
+          $(go.TextBlock, '', { alignment: go.Spot.Center }, new go.Binding('text', 'name'))
         ),
         $(go.Shape, {
           name: 'layoutBox',
           desiredSize: new go.Size(400, 400),
           fill: 'white',
-          strokeWidth: 2,
-        }),
+          strokeWidth: 2
+        })
       )
 
       const groupTemplateMap = new go.Map()
@@ -122,9 +122,9 @@ export default {
                 { column: 2, margin: 2 },
                 new go.Binding('desiredSize', 'size', go.Size.parse),
                 new go.Binding('figure', 'fig'),
-                new go.Binding('fill', 'fill'),
-              ),
-            ),
+                new go.Binding('fill', 'fill')
+              )
+            )
           },
           $(
             go.Panel,
@@ -132,11 +132,11 @@ export default {
             { isPanelMain: true }, // needed to keep this element when itemArray gets an Array
             $(go.TextBlock, 'key', { column: 0, margin: new go.Margin(2, 2, 2, 2), font: 'bold 10pt sans-serif' }),
             $(go.TextBlock, 'figure', { column: 1, margin: new go.Margin(2, 2, 2, 2), font: 'bold 10pt sans-serif' }),
-            $(go.TextBlock, 'Location', { column: 2, margin: new go.Margin(2, 2, 2, 2), font: 'bold 10pt sans-serif' }),
+            $(go.TextBlock, 'Location', { column: 2, margin: new go.Margin(2, 2, 2, 2), font: 'bold 10pt sans-serif' })
           ),
           $(go.RowColumnDefinition, { row: 0, background: 'lightgray' }),
-          $(go.RowColumnDefinition, { row: 1, separatorStroke: 'black' }),
-        ),
+          $(go.RowColumnDefinition, { row: 1, separatorStroke: 'black' })
+        )
       )
 
       return nodeTemplate
@@ -153,7 +153,7 @@ export default {
           isGroup: true,
           group: 'A',
           category: 'child',
-          margin: '20,20,20,20',
+          margin: '20,20,20,20'
         },
         {
           key: 'A_1_1',
@@ -165,8 +165,8 @@ export default {
             { key: 'A_1_1_2', name: '2', fig: 'Ellipse', fill: '#ffdba9', size: '30 50' },
             { key: 'A_1_1_3', name: '3', fig: 'Ellipse', fill: '#c7e8ac', size: '30 50' },
             { key: 'A_1_1_4', name: '4', fig: 'Ellipse', fill: '#5abaa7', size: '50 40' },
-            { key: 'A_1_1_5', name: '5', fig: 'Ellipse', fill: '#ef8d22', size: '60 30' },
-          ],
+            { key: 'A_1_1_5', name: '5', fig: 'Ellipse', fill: '#ef8d22', size: '60 30' }
+          ]
         },
         {
           key: 'B_1',
@@ -174,8 +174,8 @@ export default {
           isGroup: true,
           group: 'B',
           category: 'child',
-          margin: '20,20,20,20',
-        },
+          margin: '20,20,20,20'
+        }
       ]
       // 范围[1-5]
       const random = getRandom(4, 1)
@@ -188,19 +188,19 @@ export default {
           name: item,
           fig: widthRandom % 3 === 0 ? 'DoubleCircular' : 'Ellipse',
           fill: go.Brush.randomColor(),
-          size: `${widthRandom} ${heightRandom}`,
+          size: `${widthRandom} ${heightRandom}`
         }
       })
       const childList = {
         key: 'B_1_1',
         name: 'itemArray',
         group: 'B_1',
-        items,
+        items
       }
       nodeDataArray.push(childList)
       return new go.GraphLinksModel(nodeDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

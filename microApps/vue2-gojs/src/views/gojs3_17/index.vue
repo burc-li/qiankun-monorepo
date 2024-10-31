@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -64,25 +64,25 @@ export default {
             $('ContextMenuButton', $(go.TextBlock, '菜单1'), {
               // alignment: go.Spot.Right,
               // alignmentFocus: go.Spot.Left,
-              click: cmCommand,
+              click: cmCommand
             }),
             $('ContextMenuButton', $(go.TextBlock, '菜单2'), {
               // alignment: go.Spot.Right,
               // alignmentFocus: go.Spot.Left,
-              click: cmCommand,
-            }),
-          ), // end Adornment
-        },
+              click: cmCommand
+            })
+          ) // end Adornment
+        }
       )
 
       const nodeDataArray = [
         { key: 'Alpha', color: 'lightyellow' },
-        { key: 'Beta', color: 'orange' },
+        { key: 'Beta', color: 'orange' }
       ]
       const linkDataArray = [{ from: 'Alpha', to: 'Beta' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

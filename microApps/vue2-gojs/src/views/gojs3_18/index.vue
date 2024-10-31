@@ -32,7 +32,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -55,7 +55,7 @@ export default {
 
       const myToolTip = $(go.HTMLInfo, {
         show: showToolTip,
-        hide: hideToolTip,
+        hide: hideToolTip
       })
 
       diagram.nodeTemplate = $(
@@ -65,18 +65,18 @@ export default {
         $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
         {
           // toolTip: $('ToolTip', $(go.TextBlock, { margin: 4 }, new go.Binding('text', 'color'))),
-          toolTip: myToolTip,
-        },
+          toolTip: myToolTip
+        }
       )
 
       const nodeDataArray = [
         { key: 'Alpha', color: 'lightblue' },
-        { key: 'Beta', color: 'pink' },
+        { key: 'Beta', color: 'pink' }
       ]
       const linkDataArray = [{ from: 'Alpha', to: 'Beta' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

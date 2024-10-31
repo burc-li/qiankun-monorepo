@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = false
 
@@ -39,8 +39,8 @@ export default {
           columnSpan: 3,
           textAlign: 'center',
           stretch: go.GraphObject.Horizontal,
-          background: '#de5e60',
-        }),
+          background: '#de5e60'
+        })
       )
       diagram.groupTemplate = this.getGroupTemplate()
 
@@ -97,18 +97,18 @@ export default {
               columnSpan: 3,
               font: 'bold 16px sans-serif',
               editable: true,
-              margin: new go.Margin(2, 0, 2, 0),
+              margin: new go.Margin(2, 0, 2, 0)
             },
-            new go.Binding('text', 'name'),
+            new go.Binding('text', 'name')
           ),
           $(
             go.Placeholder,
             { row: 1, column: 0 },
             new go.Binding('margin', 'margin', function (margin) {
               return marginParse(margin)
-            }),
-          ),
-        ),
+            })
+          )
+        )
       )
       return groupTemplate
     },
@@ -119,7 +119,7 @@ export default {
         go.Node,
         'Table',
         {
-          defaultSeparatorPadding: new go.Margin(18, 18, 18, 18),
+          defaultSeparatorPadding: new go.Margin(18, 18, 18, 18)
         },
         $(go.RowColumnDefinition, { row: 0, separatorPadding: new go.Margin(40, 18, 18, 18) }),
         $(go.RowColumnDefinition, { row: 3, separatorPadding: new go.Margin(18, 18, 60, 18) }),
@@ -129,85 +129,85 @@ export default {
           { row: 0, column: 0 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 0, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 0, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 0, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 0, 'fill'))
         ),
         $(
           go.Shape,
           { row: 0, column: 1 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 1, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 1, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 1, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 1, 'fill'))
         ),
         $(
           go.Shape,
           { row: 0, column: 2 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 2, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 2, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 2, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 2, 'fill'))
         ),
         $(
           go.Shape,
           { row: 1, column: 0 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 3, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 3, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 3, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 3, 'fill'))
         ),
         $(
           go.Shape,
           { row: 1, column: 1 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 4, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 4, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 4, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 4, 'fill'))
         ),
         $(
           go.Shape,
           { row: 1, column: 2 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 5, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 5, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 5, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 5, 'fill'))
         ),
         $(
           go.Shape,
           { row: 2, column: 0 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 6, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 6, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 6, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 6, 'fill'))
         ),
         $(
           go.Shape,
           { row: 2, column: 1 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 7, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 7, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 7, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 7, 'fill'))
         ),
         $(
           go.Shape,
           { row: 2, column: 2 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 8, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 8, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 8, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 8, 'fill'))
         ),
         $(
           go.Shape,
           { row: 3, column: 0 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 9, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 9, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 9, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 9, 'fill'))
         ),
         $(
           go.Shape,
           { row: 3, column: 1 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 10, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 10, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 10, 'fill')),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 10, 'fill'))
         ),
         $(
           go.Shape,
           { row: 3, column: 2 },
           new go.Binding('desiredSize', '', node => this.getSizeByList(node.list, 11, 'size')),
           new go.Binding('figure', '', node => this.getFigByList(node.list, 11, 'fig')),
-          new go.Binding('fill', '', node => this.getFillByList(node.list, 11, 'fill')),
-        ),
+          new go.Binding('fill', '', node => this.getFillByList(node.list, 11, 'fill'))
+        )
       )
       return nodeTemplate
     },
@@ -222,7 +222,7 @@ export default {
           name: '容器',
           isGroup: true,
           group: 'container_1',
-          margin: '20,20,20,20',
+          margin: '20,20,20,20'
         },
         {
           key: 'container_1_1',
@@ -240,8 +240,8 @@ export default {
             { key: 8, name: 'Ellipse', fig: 'Ellipse', fill: '#99d5ca', size: '30 60' },
             { key: 9, name: 'Ellipse', fig: 'Ellipse', fill: '#3aa6dd', size: '60 30' },
             { key: 10, name: 'Ellipse', fig: 'Ellipse', fill: '#a3d977', size: '30 70' },
-            { key: 11, name: 'Ellipse', fig: 'Ellipse', fill: '#c1e4f7', size: '80 30' },
-          ],
+            { key: 11, name: 'Ellipse', fig: 'Ellipse', fill: '#c1e4f7', size: '80 30' }
+          ]
         },
         {
           key: 'container_2_1',
@@ -249,7 +249,7 @@ export default {
           isGroup: true,
           group: 'container_2',
           category: 'child',
-          margin: '20,20,20,20',
+          margin: '20,20,20,20'
         },
         {
           key: 'container_2_1',
@@ -267,9 +267,9 @@ export default {
             { key: 8, name: 'Ellipse', fig: 'Ellipse', fill: '#99d5ca', size: '30 60' },
             { key: 9, name: 'Ellipse', fig: 'Ellipse', fill: '#3aa6dd', size: '60 30' },
             { key: 10, name: 'Ellipse', fig: 'Ellipse', fill: '#a3d977', size: '30 70' },
-            { key: 11, name: 'Ellipse', fig: 'Ellipse', fill: '#c1e4f7', size: '80 30' },
-          ],
-        },
+            { key: 11, name: 'Ellipse', fig: 'Ellipse', fill: '#c1e4f7', size: '80 30' }
+          ]
+        }
       ]
       return new go.GraphLinksModel(nodeDataArray)
     },
@@ -287,8 +287,8 @@ export default {
     getFillByList (list, key, property) {
       const node = list.find(item => item.key === key)
       return node && node[property] ? node[property] : '#fff'
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

@@ -18,7 +18,7 @@ export default {
   data () {
     return {
       firstModel: true,
-      diagram: null,
+      diagram: null
     }
   },
   mounted () {
@@ -31,7 +31,7 @@ export default {
       // 视图
       this.diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       this.diagram.grid.visible = true
 
@@ -43,8 +43,8 @@ export default {
         $(
           go.TextBlock,
           { margin: 3, font: '28px sans-serif' }, // some room around the text
-          new go.Binding('text', 'key'),
-        ),
+          new go.Binding('text', 'key')
+        )
       )
       this.diagram.nodeTemplateMap.add(
         'AnotherType2',
@@ -52,8 +52,8 @@ export default {
           go.Node,
           'Auto',
           $(go.Shape, 'Rectangle', { strokeWidth: 1, fill: 'lightyellow' }, new go.Binding('fill', 'color')),
-          $(go.TextBlock, { margin: 12, font: '12px sans-serif' }, new go.Binding('text', 'text')),
-        ),
+          $(go.TextBlock, { margin: 12, font: '12px sans-serif' }, new go.Binding('text', 'text'))
+        )
       )
 
       // Node template that is only used by the second model
@@ -63,8 +63,8 @@ export default {
           go.Node,
           'Horizontal',
           $(go.Shape, 'Circle', { width: 24, height: 24, strokeWidth: 0, portId: '' }, new go.Binding('fill', 'color')),
-          $(go.TextBlock, { margin: 2, font: 'Bold 15px sans-serif' }, new go.Binding('text', 'key')),
-        ),
+          $(go.TextBlock, { margin: 2, font: 'Bold 15px sans-serif' }, new go.Binding('text', 'key'))
+        )
       )
       // Another node template that is only used by the second model
       this.diagram.nodeTemplateMap.add(
@@ -73,8 +73,8 @@ export default {
           go.Node,
           'Auto',
           $(go.Shape, 'Rectangle', { strokeWidth: 1, fill: 'lightyellow' }, new go.Binding('fill', 'color')),
-          $(go.TextBlock, { margin: 12, font: '12px sans-serif' }, new go.Binding('text', 'text')),
-        ),
+          $(go.TextBlock, { margin: 12, font: '12px sans-serif' }, new go.Binding('text', 'text'))
+        )
       )
       this.loadModel()
     },
@@ -89,12 +89,12 @@ export default {
             { key: 'Beta', color: 'lightblue' },
             { key: 'Gamma', color: 'lightgreen' },
             { key: 'Delta', color: 'lightgreen' },
-            { text: 'Some comment', category: 'AnotherType2' },
+            { text: 'Some comment', category: 'AnotherType2' }
           ],
           [
             { from: 'Alpha', to: 'Beta' },
-            { from: 'Gamma', to: 'Delta' },
-          ],
+            { from: 'Gamma', to: 'Delta' }
+          ]
         )
       } else {
         // load the second model
@@ -107,20 +107,20 @@ export default {
             { key: 'Four', category: 'TypeTwo', color: go.Brush.randomColor() },
             { key: 'Five', category: 'TypeTwo', color: go.Brush.randomColor() },
             { key: 'Six', category: 'TypeTwo', color: go.Brush.randomColor() },
-            { text: 'Some comment', category: 'AnotherType' },
+            { text: 'Some comment', category: 'AnotherType' }
           ],
           [
             { from: 'One', to: 'Two' },
             { from: 'One', to: 'Three' },
             { from: 'Three', to: 'Four' },
             { from: 'Three', to: 'Five' },
-            { from: 'Four', to: 'Six' },
-          ],
+            { from: 'Four', to: 'Six' }
+          ]
         )
       }
       this.firstModel = !this.firstModel
-    },
-  },
+    }
+  }
 }
 </script>
 

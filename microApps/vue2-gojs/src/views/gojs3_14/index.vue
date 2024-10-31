@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -54,7 +54,7 @@ export default {
         {
           // when the user clicks on a Node, highlight all Links coming out of the node
           // and all of the Nodes at the other ends of those Links.
-          click: onClickNode,
+          click: onClickNode
         },
         $(
           go.Shape,
@@ -64,9 +64,9 @@ export default {
           // the Shape.stroke color depends on whether Node.isHighlighted is true
           new go.Binding('stroke', 'isHighlighted', function (h) {
             return h ? 'red' : 'black'
-          }).ofObject(),
+          }).ofObject()
         ),
-        $(go.TextBlock, { margin: 10, font: 'bold 18px Verdana' }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 10, font: 'bold 18px Verdana' }, new go.Binding('text', 'key'))
       )
 
       // define the Link template
@@ -82,7 +82,7 @@ export default {
           // the Shape.strokeWidth depends on whether Link.isHighlighted is true
           new go.Binding('strokeWidth', 'isHighlighted', function (h) {
             return h ? 3 : 1
-          }).ofObject(),
+          }).ofObject()
         ),
         $(
           go.Shape,
@@ -90,8 +90,8 @@ export default {
           // the Shape.fill color depends on whether Link.isHighlighted is true
           new go.Binding('fill', 'isHighlighted', function (h) {
             return h ? 'red' : 'black'
-          }).ofObject(),
-        ),
+          }).ofObject()
+        )
       )
 
       // when the user clicks on the background of the Diagram, remove all highlighting
@@ -108,18 +108,18 @@ export default {
           { key: 'Alpha', color: '#96D6D9' },
           { key: 'Beta', color: '#96D6D9' },
           { key: 'Gamma', color: '#EFEBCA' },
-          { key: 'Delta', color: '#EFEBCA' },
+          { key: 'Delta', color: '#EFEBCA' }
         ],
         [
           { from: 'Alpha', to: 'Beta' },
           { from: 'Alpha', to: 'Gamma' },
           { from: 'Beta', to: 'Beta' },
           { from: 'Gamma', to: 'Delta' },
-          { from: 'Delta', to: 'Alpha' },
-        ],
+          { from: 'Delta', to: 'Alpha' }
+        ]
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

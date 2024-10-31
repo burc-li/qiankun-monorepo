@@ -27,32 +27,32 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       diagram.layout = $(
         go.LayeredDigraphLayout, // this will be discussed in a later section
-        { columnSpacing: 5, setsPortSpots: false },
+        { columnSpacing: 5, setsPortSpots: false }
       )
       diagram.nodeTemplate = $(
         go.Node,
         'Auto',
         {
           fromSpot: go.Spot.RightSide, // coming out from middle-right
-          toSpot: go.Spot.LeftSide,
+          toSpot: go.Spot.LeftSide
         }, // going into at middle-left
         $(go.Shape, 'Rectangle', { fill: 'lightgray' }),
-        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key'))
       )
 
       diagram.linkTemplate = $(
         go.Link,
         {
           routing: go.Link.Orthogonal, // Orthogonal routing
-          corner: 2,
+          corner: 2
         },
         $(go.Shape),
-        $(go.Shape, { toArrow: 'Standard' }),
+        $(go.Shape, { toArrow: 'Standard' })
       )
 
       const nodeDataArray = [
@@ -63,7 +63,7 @@ export default {
         { key: 'Epsilon' },
         { key: 'Zeta' },
         { key: 'Eta' },
-        { key: 'Theta' },
+        { key: 'Theta' }
       ]
       const linkDataArray = [
         { from: 'Beta', to: 'Alpha' },
@@ -73,11 +73,11 @@ export default {
         { from: 'Alpha', to: 'Epsilon' },
         { from: 'Alpha', to: 'Zeta' },
         { from: 'Alpha', to: 'Eta' },
-        { from: 'Alpha', to: 'Theta' },
+        { from: 'Alpha', to: 'Theta' }
       ]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

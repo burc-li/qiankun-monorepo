@@ -90,9 +90,9 @@ const textareaValue = {
     { text: 'first C', group: 5, key: -12 },
     { text: 'second C', group: 5, key: -13 },
     { text: 'first D', group: 6, key: -14 },
-    { text: 'first E', group: 7, key: -15 },
+    { text: 'first E', group: 7, key: -15 }
   ],
-  linkDataArray: [],
+  linkDataArray: []
 }
 export default {
   name: 'gojs',
@@ -101,7 +101,7 @@ export default {
   data () {
     return {
       level: 0,
-      textareaValue: JSON.stringify(textareaValue),
+      textareaValue: JSON.stringify(textareaValue)
     }
   },
   mounted () {
@@ -121,7 +121,7 @@ export default {
           wrappingWidth: NaN, // NaN meaning to use the width of the diagram's panel's viewport (Infinity)
           wrappingColumn: NaN, // NaN  meaning not to limit the number of columns
           alignment: go.GridLayout.Position,
-          cellSize: new go.Size(1, 1),
+          cellSize: new go.Size(1, 1)
         }),
         // scrollMargin: 300,
         // scrollMode: go.Diagram.InfiniteScroll,
@@ -129,7 +129,7 @@ export default {
         // This command adds a copy of archetypeGroupData to the diagram's model to create a new Group and then adds the selected Parts to that new group. This is normally invoked by the Ctrl-G keyboard shortcut.
         'commandHandler.archetypeGroupData': { isGroup: true, category: 'OfGroups' },
         // undo or redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       // There are two templates for Groups, "OfGroups" and "OfNodes".
@@ -190,8 +190,8 @@ export default {
               wrappingWidth: Infinity,
               alignment: go.GridLayout.Position,
               cellSize: new go.Size(1, 1),
-              spacing: new go.Size(4, 4),
-            }),
+              spacing: new go.Size(4, 4)
+            })
           },
           new go.Binding('background', 'isHighlighted', function (h) {
             return h ? 'rgba(255,0,0,0.2)' : 'transparent'
@@ -212,14 +212,14 @@ export default {
                   margin: 5,
                   font: 'bold 18px sans-serif',
                   opacity: 0.75,
-                  stroke: '#404040',
+                  stroke: '#404040'
                 },
-                new go.Binding('text', 'text').makeTwoWay(),
-              ),
+                new go.Binding('text', 'text').makeTwoWay()
+              )
             ), // end Horizontal Panel
-            $(go.Placeholder, { padding: 5, alignment: go.Spot.TopLeft }),
-          ), // end Vertical Panel
-        ),
+            $(go.Placeholder, { padding: 5, alignment: go.Spot.TopLeft })
+          ) // end Vertical Panel
+        )
       ) // end Group and call to add to template Map
 
       myDiagram.groupTemplateMap.add(
@@ -251,13 +251,13 @@ export default {
               wrappingColumn: 1,
               alignment: go.GridLayout.Position,
               cellSize: new go.Size(1, 1),
-              spacing: new go.Size(4, 4),
-            }),
+              spacing: new go.Size(4, 4)
+            })
           },
           [
             new go.Binding('background', 'isHighlighted', function (h) {
               return h ? 'rgba(255,0,0,0.2)' : 'transparent'
-            }).ofObject(),
+            }).ofObject()
           ],
           $(go.Shape, 'Rectangle', { fill: null, stroke: '#33D3E5', strokeWidth: 2 }),
           $(
@@ -275,14 +275,14 @@ export default {
                   margin: 5,
                   font: 'bold 16px sans-serif',
                   opacity: 0.75,
-                  stroke: '#404040',
+                  stroke: '#404040'
                 },
-                new go.Binding('text', 'text').makeTwoWay(),
-              ),
+                new go.Binding('text', 'text').makeTwoWay()
+              )
             ), // end Horizontal Panel
-            $(go.Placeholder, { padding: 5, alignment: go.Spot.TopLeft }),
-          ), // end Vertical Panel
-        ),
+            $(go.Placeholder, { padding: 5, alignment: go.Spot.TopLeft })
+          ) // end Vertical Panel
+        )
       ) // end Group and call to add to template Map
 
       myDiagram.nodeTemplate = $(
@@ -302,10 +302,10 @@ export default {
             editable: true,
             font: 'bold 13px sans-serif',
             opacity: 0.75,
-            stroke: '#404040',
+            stroke: '#404040'
           },
-          new go.Binding('text', 'text').makeTwoWay(),
-        ),
+          new go.Binding('text', 'text').makeTwoWay()
+        )
       )
 
       // initialize the Palette and its contents
@@ -315,13 +315,13 @@ export default {
         layout: $(go.GridLayout, {
           wrappingColumn: 1,
           alignment: go.GridLayout.Position,
-          arrangement: go.GridLayout.LeftToRight,
-        }),
+          arrangement: go.GridLayout.LeftToRight
+        })
       })
       myPalette.model = new go.Model([
         { text: '成', color: '#ACE600' },
         { text: '王也', color: '#FFDD33' },
-        { text: '冯宝宝', color: '#33D3E5' },
+        { text: '冯宝宝', color: '#33D3E5' }
       ])
 
       window.diagram = myDiagram
@@ -355,8 +355,8 @@ export default {
     },
     load () {
       myDiagram.model = go.Model.fromJson(this.textareaValue)
-    },
-  },
+    }
+  }
 }
 </script>
 

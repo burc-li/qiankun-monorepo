@@ -29,13 +29,13 @@ export default {
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
         'undoManager.isEnabled': true,
-        scale: 1,
+        scale: 1
       })
       diagram.nodeTemplate = $(
         go.Node,
         'Auto',
         new go.Binding('location', 'loc', go.Point.parse),
-        $(go.Shape, { width: 0, height: 0 }),
+        $(go.Shape, { width: 0, height: 0 })
       )
 
       diagram.linkTemplate = $(
@@ -44,12 +44,12 @@ export default {
         $(go.Shape, { strokeDashArray: [2, 2] }),
 
         $(go.Shape, { fromArrow: 'Circle', fill: '#fff' }),
-        $(go.Shape, { toArrow: 'OpenTriangle' }),
+        $(go.Shape, { toArrow: 'OpenTriangle' })
       )
 
       const nodeDataArray = [
         { key: 'A', loc: '10 30' },
-        { key: 'B', loc: '22 10' },
+        { key: 'B', loc: '22 10' }
       ]
       const linkDataArray = [{ from: 'A', to: 'B' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
@@ -57,11 +57,11 @@ export default {
       document.getElementById('imgBox').appendChild(
         diagram.makeSvg({
           parts: diagram.links,
-          size: new go.Size(32, 32),
-        }),
+          size: new go.Size(32, 32)
+        })
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

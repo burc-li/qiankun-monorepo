@@ -45,19 +45,19 @@ export default function defineFigureGenerator () {
       new go.PathSegment(
         go.PathSegment.Line,
         chevronLeftOffset - chevronBulgeWidth - chevronWidth,
-        h / 2 - chevronHeight,
-      ),
+        h / 2 - chevronHeight
+      )
     )
     fig.add(new go.PathSegment(go.PathSegment.Line, chevronLeftOffset - chevronWidth, h / 2))
     fig.add(
       new go.PathSegment(
         go.PathSegment.Line,
         chevronLeftOffset - chevronBulgeWidth - chevronWidth,
-        h / 2 + chevronHeight,
-      ),
+        h / 2 + chevronHeight
+      )
     )
     fig.add(
-      new go.PathSegment(go.PathSegment.Line, chevronLeftOffset - chevronBulgeWidth, h / 2 + chevronHeight).close(),
+      new go.PathSegment(go.PathSegment.Line, chevronLeftOffset - chevronBulgeWidth, h / 2 + chevronHeight).close()
     )
 
     fig.add(new go.PathSegment(go.PathSegment.Move, chevronRightOffset, h / 2 - chevronHeight))
@@ -192,10 +192,10 @@ export default function defineFigureGenerator () {
     fig.add(new go.PathSegment(go.PathSegment.Line, 0, radius))
     fig.add(new go.PathSegment(go.PathSegment.Bezier, radius, 0, 0, corner, corner, 0))
     fig.add(
-      new go.PathSegment(go.PathSegment.Move, (leftWidth - triangSpace) / 2 - triangWidth, (h - triangHeight) / 2),
+      new go.PathSegment(go.PathSegment.Move, (leftWidth - triangSpace) / 2 - triangWidth, (h - triangHeight) / 2)
     )
     fig.add(
-      new go.PathSegment(go.PathSegment.Line, (leftWidth - triangSpace) / 2 - triangWidth, (h + triangHeight) / 2),
+      new go.PathSegment(go.PathSegment.Line, (leftWidth - triangSpace) / 2 - triangWidth, (h + triangHeight) / 2)
     )
     fig.add(new go.PathSegment(go.PathSegment.Line, (leftWidth - triangSpace) / 2, h / 2).close())
     fig.add(new go.PathSegment(go.PathSegment.Move, (leftWidth + triangSpace) / 2, (h - triangHeight) / 2))
@@ -253,7 +253,7 @@ export default function defineFigureGenerator () {
         .add(new go.PathSegment(go.PathSegment.Line, param1, h))
         .add(new go.PathSegment(go.PathSegment.Bezier, 0, h - param1, cpOffset, h, 0, h - cpOffset))
         .add(new go.PathSegment(go.PathSegment.Line, 0, param1))
-        .add(new go.PathSegment(go.PathSegment.Bezier, param1, 0, 0, cpOffset, cpOffset, 0).close()),
+        .add(new go.PathSegment(go.PathSegment.Bezier, param1, 0, 0, cpOffset, cpOffset, 0).close())
     )
     // if (cpOffset > 1) {
     geo.spot1 = new go.Spot(0.6, 0.5, cpOffset, cpOffset)
@@ -402,8 +402,8 @@ export default function defineFigureGenerator () {
         rad,
         rad, // center
         rad,
-        rad,
-      ).close(),
+        rad
+      ).close()
     )
     return geo
   })

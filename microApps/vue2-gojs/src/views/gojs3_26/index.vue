@@ -106,7 +106,7 @@ export default {
       // 视图
       const myDiagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo 启用  ʌnˈdu撤销  riːˈduː重做
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       window.diagram = myDiagram
 
@@ -122,7 +122,7 @@ export default {
           click: (e, pgh) => {
             console.log(pgh, pgh.isSelected)
             // pgh.isSelected = false
-          },
+          }
           // selectionObjectName: 'PIC',
         }, // set Node properties here
 
@@ -139,8 +139,8 @@ export default {
             'RoundedRectangle', // string argument can name a predefined figure
             {}, // set Shape properties here
             // example Shape binding sets Shape.figure to the value of Node.data.fig
-            new go.Binding('figure', 'fig'),
-          ),
+            new go.Binding('figure', 'fig')
+          )
         ),
 
         $(
@@ -159,10 +159,10 @@ export default {
               setTimeout(_ => {
                 pgh.part.isSelected = true
               }, 50)
-            },
+            }
           },
           // Picture.source is data bound to the "source" attribute of the model data
-          new go.Binding('source', 'img'),
+          new go.Binding('source', 'img')
         ),
 
         $(
@@ -171,8 +171,8 @@ export default {
           { margin: new go.Margin(0, 20, 0, 0), stroke: 'white', font: 'bold 16px sans-serif' }, // set TextBlock properties here
           // example TextBlock binding sets TextBlock.text to the value of Node.data.name
           new go.Binding('text', 'name'),
-          new go.Binding('stroke', 'color'),
-        ),
+          new go.Binding('stroke', 'color')
+        )
       )
 
       // 模型
@@ -182,13 +182,13 @@ export default {
       myModel.nodeDataArray = [
         { name: 'Alpha', color: '#de5e60', img: img01, loc: '0 0' },
         { name: 'Beta', color: '#de5e60', img: img02, loc: '200 120' },
-        { name: 'Gamma', color: '#de5e60', img: img03, loc: '400 240' },
+        { name: 'Gamma', color: '#de5e60', img: img03, loc: '400 240' }
       ]
 
       // 给视图添加模型
       myDiagram.model = myModel
-    },
-  },
+    }
+  }
 }
 </script>
 

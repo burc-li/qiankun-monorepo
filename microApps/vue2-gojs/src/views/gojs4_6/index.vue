@@ -26,7 +26,7 @@ export default {
     return {
       diagram: null,
       currDragNode: null,
-      dragProcessList: [],
+      dragProcessList: []
     }
   },
   mounted () {
@@ -38,7 +38,7 @@ export default {
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
         'undoManager.isEnabled': true,
-        maxSelectionCount: 1,
+        maxSelectionCount: 1
       })
       this.diagram = diagram
       window.diagram = diagram
@@ -95,7 +95,7 @@ export default {
               animation.add(shape, 'height', shape.height, 0)
             }
             animation.start()
-          },
+          }
         },
         new go.Binding('background', 'background'),
         $(
@@ -106,10 +106,10 @@ export default {
             isPanelMain: true,
             fill: 'rgba(0,0,0,0)',
             strokeWidth: 2,
-            height: 24,
+            height: 24
           }),
           $(go.TextBlock, '', { alignment: go.Spot.Center, stroke: '#fff' }, new go.Binding('text', 'name')),
-          $('SubGraphExpanderButton', { alignment: new go.Spot(0, 0.5, 15, 0) }),
+          $('SubGraphExpanderButton', { alignment: new go.Spot(0, 0.5, 15, 0) })
         ),
         $(
           go.Shape,
@@ -118,10 +118,10 @@ export default {
             fill: 'rgba(0,0,0,0)',
             width: 398,
             height: 250,
-            strokeWidth: 2,
-          },
+            strokeWidth: 2
+          }
           // new go.Binding('height', 'height', height => (height ? height - 24 : height)),
-        ),
+        )
       )
       const groupTemplateMap = new go.Map()
 
@@ -139,7 +139,7 @@ export default {
         {
           location: new go.Point(0, 0),
           locationObjectName: '',
-          locationSpot: go.Spot.Center,
+          locationSpot: go.Spot.Center
         },
         {
           // 在此对象上按下鼠标左键/右键一段时间后执行的事件
@@ -166,11 +166,11 @@ export default {
             if (!lastOne || !hasFalse) return
             this.circularLayout('545 50')
             grp.diagram.clearSelection()
-          },
+          }
         },
         new go.Binding('desiredSize', 'size', go.Size.parse),
         $(go.Shape, 'Rectangle', { fill: 'white' }, new go.Binding('figure', 'fig'), new go.Binding('fill', 'fill')),
-        $(go.TextBlock, new go.Binding('text', 'name')),
+        $(go.TextBlock, new go.Binding('text', 'name'))
       )
       return nodeTemplate
     },
@@ -185,14 +185,14 @@ export default {
           category: 'detailed',
           margin: '20,40,40,40',
           width: 400,
-          height: 224,
+          height: 224
         },
         { key: 'A_0', name: '0', group: 'A', fig: 'Ellipse', fill: '#f9d2de', size: '50 30' },
         { key: 'A_1', name: '1', group: 'A', fig: 'DoubleCircular', fill: '#ffeca9', size: '50 50' },
         { key: 'A_2', name: '2', group: 'A', fig: 'Ellipse', fill: '#ffdba9', size: '30 50' },
         { key: 'A_3', name: '3', group: 'A', fig: 'Ellipse', fill: '#c7e8ac', size: '30 50' },
         { key: 'A_4', name: '4', group: 'A', fig: 'Ellipse', fill: '#5abaa7', size: '50 40' },
-        { key: 'A_5', name: '5', group: 'A', fig: 'Ellipse', fill: '#ef8d22', size: '60 30' },
+        { key: 'A_5', name: '5', group: 'A', fig: 'Ellipse', fill: '#ef8d22', size: '60 30' }
       ]
 
       return new go.GraphLinksModel(nodeDataArray)
@@ -204,8 +204,8 @@ export default {
       const nodeList = group.memberParts
       const myGridLayout = new MyGridLayout({ columns: 3, offset: '60 80', spacing: '20 15' })
       myGridLayout.doLayout(new go.List().addAll(nodeList))
-    },
-  },
+    }
+  }
 }
 </script>
 <style lang="less" scoped>

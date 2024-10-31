@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       // 连线类型
@@ -36,14 +36,14 @@ export default {
         'Auto',
         new go.Binding('location', 'loc', go.Point.parse),
         $(go.Shape, 'RoundedRectangle', { fill: 'lightgray' }),
-        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key'))
       )
 
       diagram.linkTemplate = $(
         go.Link,
         new go.Binding('routing', 'routing'),
         $(go.Shape),
-        $(go.Shape, { toArrow: 'Standard' }),
+        $(go.Shape, { toArrow: 'Standard' })
       )
 
       const nodeDataArray = [
@@ -53,7 +53,7 @@ export default {
         { key: 'Delta', loc: '75 50' },
         { key: 'Epsilon', loc: '150 30' },
         { key: 'burc', loc: '-50 -60' },
-        { key: 'vinx', loc: '-50 60' },
+        { key: 'vinx', loc: '-50 60' }
       ]
       const linkDataArray = [
         { from: 'Alpha', to: 'vinx', routing: go.Link.Normal },
@@ -62,7 +62,7 @@ export default {
         { from: 'Alpha', to: 'burc', routing: go.Link.Orthogonal },
         { from: 'Alpha', to: 'burc', routing: go.Link.Orthogonal },
         { from: 'Alpha', to: 'Beta', routing: go.Link.AvoidsNodes },
-        { from: 'Alpha', to: 'Beta', routing: go.Link.AvoidsNodes },
+        { from: 'Alpha', to: 'Beta', routing: go.Link.AvoidsNodes }
       ]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
       // diagram.model = $(go.GraphLinksModel, { nodeDataArray, linkDataArray })
@@ -73,11 +73,11 @@ export default {
         layerSpacing: 180,
         // 设置重合线分离
         // setsPortSpots: false,
-        packOption: go.LayeredDigraphLayout.PackAll,
+        packOption: go.LayeredDigraphLayout.PackAll
       })
       layout.doLayout(diagram)
-    },
-  },
+    }
+  }
 }
 </script>
 

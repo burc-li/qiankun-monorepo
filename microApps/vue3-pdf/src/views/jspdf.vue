@@ -2,8 +2,12 @@
   <div class="container">
     <div class="btn" @click="downLoadPdfA4Single">下载一页PDF（A4纸）</div>
     <div class="btn" @click="downLoadPdfA4Multiple">下载多页PDF（A4纸）</div>
-    <div class="btn" @click="downLoadPdfAutoSingle">下载一页PDF（自适应纸）</div>
-    <div class="btn" @click="downLoadPdfAutoMultiple">下载多页PDF（自适应纸）</div>
+    <div class="btn" @click="downLoadPdfAutoSingle">
+      下载一页PDF（自适应纸）
+    </div>
+    <div class="btn" @click="downLoadPdfAutoMultiple">
+      下载多页PDF（自适应纸）
+    </div>
     <section v-for="(item, index) in pageList" :key="index">
       <p class="text">{{ index }} - {{ item.text }}</p>
       <img class="image" :src="item.src" />
@@ -27,9 +31,12 @@ const downLoadPdfA4Single = () => {
     // 方向纵向，尺寸ponits，纸张格式 a4 即 [595.28, 841.89]
     const A4Width = 595.28
     const A4Height = 841.89 // A4纸宽
-    const pageHeight = A4Height >= A4Width * canvas.height / canvas.width ? A4Height :  A4Width * canvas.height / canvas.width
+    const pageHeight =
+      A4Height >= (A4Width * canvas.height) / canvas.width
+        ? A4Height
+        : (A4Width * canvas.height) / canvas.width
     const pdf = new jsPDF('portrait', 'pt', [A4Width, pageHeight])
-    
+
     // addImage后两个参数控制添加图片的尺寸，此处将页面高度按照a4纸宽高比列进行压缩
     pdf.addImage(
       pageData,
@@ -37,7 +44,7 @@ const downLoadPdfA4Single = () => {
       0,
       0,
       A4Width,
-      A4Width * canvas.height / canvas.width,
+      (A4Width * canvas.height) / canvas.width,
     )
     pdf.save('下载一页PDF（A4纸）.pdf')
   })
@@ -53,19 +60,12 @@ const downLoadPdfAutoSingle = () => {
     const pageData = canvas.toDataURL('image/jpeg', 1.0)
 
     const pageWidth = canvas.width
-    const pageHeight =  canvas.height
-    const orientation = canvas.height >= canvas.width ? 'portrait' : 'landscape'  // portrait 表示纵向，landscape表示横向
+    const pageHeight = canvas.height
+    const orientation = canvas.height >= canvas.width ? 'portrait' : 'landscape' // portrait 表示纵向，landscape表示横向
     const pdf = new jsPDF(orientation, 'pt', [pageWidth, pageHeight])
-    
+
     // addImage后两个参数控制添加图片的尺寸，此处将页面高度按照a4纸宽高比列进行压缩
-    pdf.addImage(
-      pageData,
-      'JPEG',
-      0,
-      0,
-      pageWidth,
-      pageHeight
-    )
+    pdf.addImage(pageData, 'JPEG', 0, 0, pageWidth, pageHeight)
     pdf.save('下载一页PDF（自适应纸）.pdf')
   })
 }

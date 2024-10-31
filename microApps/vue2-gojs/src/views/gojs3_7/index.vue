@@ -28,25 +28,25 @@ export default {
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
         'undoManager.isEnabled': true,
-        scale: 0.7,
+        scale: 0.7
       })
       diagram.nodeTemplate = $(
         go.Node,
         'Auto',
         new go.Binding('location', 'loc', go.Point.parse),
-        $(go.Shape, { width: 1, height: 1 }),
+        $(go.Shape, { width: 1, height: 1 })
       )
 
       diagram.linkTemplate = $(go.Link, { routing: go.Link.Normal }, $(go.Shape), $(go.Shape, { toArrow: 'Standard' }))
 
       const nodeDataArray = [
         { key: 'A', loc: '0 24' },
-        { key: 'B', loc: '22 4' },
+        { key: 'B', loc: '22 4' }
       ]
       const linkDataArray = [{ from: 'A', to: 'B' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

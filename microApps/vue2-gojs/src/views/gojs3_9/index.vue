@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.nodeTemplate = $(
         go.Node,
@@ -46,9 +46,9 @@ export default {
               columnSpan: 2,
               alignment: go.Spot.Center,
               font: 'bold 10pt sans-serif',
-              margin: new go.Margin(4, 2),
+              margin: new go.Margin(4, 2)
             },
-            new go.Binding('text', 'key'),
+            new go.Binding('text', 'key')
           ),
           $(
             go.Panel,
@@ -56,9 +56,9 @@ export default {
             { column: 0, row: 1 },
             $(
               go.Shape, // the "A" port
-              { width: 6, height: 6, portId: 'A' },
+              { width: 6, height: 6, portId: 'A' }
             ),
-            $(go.TextBlock, 'A'), // "A" port label
+            $(go.TextBlock, 'A') // "A" port label
           ),
           $(
             go.Panel,
@@ -66,9 +66,9 @@ export default {
             { column: 0, row: 2 },
             $(
               go.Shape, // the "B" port
-              { width: 6, height: 6, portId: 'B' },
+              { width: 6, height: 6, portId: 'B' }
             ),
-            $(go.TextBlock, 'B'), // "B" port label
+            $(go.TextBlock, 'B') // "B" port label
           ),
           $(
             go.Panel,
@@ -77,17 +77,17 @@ export default {
             $(go.TextBlock, 'Out'), // "Out" port label
             $(
               go.Shape, // the "Out" port
-              { width: 6, height: 6, portId: 'Out' },
-            ),
-          ),
-        ),
+              { width: 6, height: 6, portId: 'Out' }
+            )
+          )
+        )
       )
 
       diagram.linkTemplate = $(
         go.Link,
         { routing: go.Link.Orthogonal, corner: 3 },
         $(go.Shape),
-        $(go.Shape, { toArrow: 'Standard' }),
+        $(go.Shape, { toArrow: 'Standard' })
       )
 
       diagram.layout = $(go.LayeredDigraphLayout, { columnSpacing: 10 })
@@ -98,11 +98,11 @@ export default {
         nodeDataArray: [{ key: 'Add1' }, { key: 'Add2' }, { key: 'Subtract1' }],
         linkDataArray: [
           { from: 'Add1', fromPort: 'Out', to: 'Subtract1', toPort: 'A' },
-          { from: 'Add2', fromPort: 'Out', to: 'Subtract1', toPort: 'B' },
-        ],
+          { from: 'Add2', fromPort: 'Out', to: 'Subtract1', toPort: 'B' }
+        ]
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

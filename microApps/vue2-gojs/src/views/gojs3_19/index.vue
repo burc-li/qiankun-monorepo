@@ -33,7 +33,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -68,7 +68,7 @@ export default {
 
       const myContextMenu = $(go.HTMLInfo, {
         show: showContextMenu,
-        hide: hideContextMenu,
+        hide: hideContextMenu
       })
 
       // this is a normal Node template that also has a contextMenu defined for it
@@ -79,18 +79,18 @@ export default {
         $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
         {
           // define a context menu for each node
-          contextMenu: myContextMenu, // end Adornment
-        },
+          contextMenu: myContextMenu // end Adornment
+        }
       )
 
       const nodeDataArray = [
         { key: 'Alpha', color: 'lightyellow' },
-        { key: 'Beta', color: 'orange' },
+        { key: 'Beta', color: 'orange' }
       ]
       const linkDataArray = [{ from: 'Alpha', to: 'Beta' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

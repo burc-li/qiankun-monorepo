@@ -28,7 +28,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       // 默认网格
       diagram.grid.visible = true
@@ -47,7 +47,7 @@ export default {
             graduatedMax: 100,
             graduatedTickBase: 0,
             graduatedTickUnit: 2.5,
-            background: '#de5e60',
+            background: '#de5e60'
           },
           // H400 刻度尺长度
           $(go.Shape, { geometryString: 'M0 0 H400' }), // the main Shape
@@ -56,11 +56,11 @@ export default {
           // a longer tick mark every four ticks
           $(go.Shape, { geometryString: 'M0 0 V10', interval: 4 }),
           // text label only every four ticks, with a vertical offset
-          $(go.TextBlock, { segmentOffset: new go.Point(0, 12), interval: 4 }),
-        ),
+          $(go.TextBlock, { segmentOffset: new go.Point(0, 12), interval: 4 })
+        )
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

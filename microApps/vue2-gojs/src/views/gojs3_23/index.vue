@@ -35,12 +35,12 @@ export default {
           $(go.Shape, 'LineV', { stroke: '#efefef' }),
           $(go.Shape, 'LineH', {
             stroke: '#e0e0e0',
-            interval: 4,
+            interval: 4
           }),
           $(go.Shape, 'LineV', {
             stroke: '#e0e0e0',
-            interval: 4,
-          }),
+            interval: 4
+          })
         ),
         // 节点拖动并不是线性移动，而是散点移动，默认对齐网格进行
         'draggingTool.isGridSnapEnabled': true,
@@ -49,7 +49,7 @@ export default {
         // 节点拉伸缩放是单元格的倍数
         'resizingTool.isGridSnapEnabled': true,
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       // 默认网格
       // diagram.grid.visible = true
@@ -67,12 +67,12 @@ export default {
         'Auto',
         { resizable: true },
         $(go.Shape, 'Rectangle', { fill: 'lightgray' }),
-        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key'))
       )
       const nodeDataArray = [{ key: 'Alpha' }, { key: 'Beta' }, { key: 'Gamma' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

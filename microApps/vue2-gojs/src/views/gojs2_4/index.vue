@@ -32,7 +32,7 @@ export default {
       // 视图
       const myDiagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       // 模型
@@ -42,7 +42,7 @@ export default {
         { key: 'B', parent: 'A', name: '华为', img: img02 },
         { key: 'C', parent: 'A', name: '荣耀', img: img03 },
         { key: 'D', parent: 'B', name: 'Mate40', img: img04 },
-        { key: 'E', parent: 'B', name: 'P50', img: img05 },
+        { key: 'E', parent: 'B', name: 'P50', img: img05 }
       ]
 
       // 添加模型
@@ -64,8 +64,8 @@ export default {
           go.TextBlock,
           'default text',
           { margin: 12, stroke: 'white', font: 'bold 16px sans-serif' },
-          new go.Binding('text', 'name'),
-        ),
+          new go.Binding('text', 'name')
+        )
       )
 
       // 添加布局
@@ -78,12 +78,12 @@ export default {
         // default routing is go.Link.Normal
         // default corner is 0
         { routing: go.Link.Orthogonal, corner: 5 },
-        $(go.Shape, { strokeWidth: 3, stroke: '#555' }), // the link shape
+        $(go.Shape, { strokeWidth: 3, stroke: '#555' }) // the link shape
         // if we wanted an arrowhead we would also add another Shape with toArrow defined:
         // $(go.Shape, { toArrow: "Standard", stroke: null }
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -41,7 +41,7 @@ export default {
           { name: 'BODY', width: 150, height: 100 },
           { portId: '' },
           $(go.Shape, { fill: 'lightgray', stroke: null, strokeWidth: 0 }),
-          $(go.TextBlock, new go.Binding('text')),
+          $(go.TextBlock, new go.Binding('text'))
         ),
         $(
           go.Panel,
@@ -54,11 +54,11 @@ export default {
           {
             opacity: 0,
             alignment: new go.Spot(1, 0, 5, -5),
-            alignmentFocus: go.Spot.TopRight,
+            alignmentFocus: go.Spot.TopRight
           },
           $(
             go.Shape, // the ribbon itself
-            { geometryString: 'F1 M0 0 L30 0 70 40 70 70z', fill: 'red', stroke: null, strokeWidth: 0 },
+            { geometryString: 'F1 M0 0 L30 0 70 40 70 70z', fill: 'red', stroke: null, strokeWidth: 0 }
           ),
           $(go.TextBlock, new go.Binding('text', 'ribbon'), {
             alignment: new go.Spot(0.5, 0.5, 6, -6),
@@ -67,20 +67,20 @@ export default {
             angle: 45,
             stroke: 'white',
             font: 'bold 13px sans-serif',
-            textAlign: 'center',
-          }),
-        ),
+            textAlign: 'center'
+          })
+        )
       )
 
       diagram.model = new go.GraphLinksModel(
         [
           { key: 1, text: 'Alpha' },
-          { key: 2, text: 'Beta', ribbon: 'NEWEST' },
+          { key: 2, text: 'Beta', ribbon: 'NEWEST' }
         ],
-        [],
+        []
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

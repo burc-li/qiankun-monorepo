@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -41,8 +41,8 @@ export default {
         $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
         {
           // define a tooltip for each node that displays the color as text
-          toolTip: $('ToolTip', $(go.TextBlock, { margin: 4 }, new go.Binding('text', 'color'))), // end of Adornment
-        },
+          toolTip: $('ToolTip', $(go.TextBlock, { margin: 4 }, new go.Binding('text', 'color'))) // end of Adornment
+        }
       )
 
       // a function that produces the content of the diagram tooltip
@@ -57,18 +57,18 @@ export default {
           go.TextBlock,
           { margin: 4 },
           // use a converter to display information about the diagram model
-          new go.Binding('text', '', diagramInfo),
-        ),
+          new go.Binding('text', '', diagramInfo)
+        )
       )
 
       const nodeDataArray = [
         { key: 'Alpha', color: 'lightblue' },
-        { key: 'Beta', color: 'pink' },
+        { key: 'Beta', color: 'pink' }
       ]
       const linkDataArray = [{ from: 'Alpha', to: 'Beta' }]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

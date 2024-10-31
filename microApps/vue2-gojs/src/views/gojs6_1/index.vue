@@ -19,7 +19,7 @@ export default {
   props: {},
   data () {
     return {
-      diagram: null,
+      diagram: null
     }
   },
   mounted () {
@@ -34,7 +34,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
       this.diagram = diagram
@@ -50,24 +50,24 @@ export default {
           resizable: true,
           resizeObjectName: 'SHAPE',
           rotatable: true,
-          locationSpot: go.Spot.Center,
+          locationSpot: go.Spot.Center
         },
         $(
           go.Panel,
           'Spot',
           {
-            name: 'Panel',
+            name: 'Panel'
           },
           $(
             go.Shape,
             {
               name: 'SHAPE',
               strokeWidth: 1,
-              fill: $(go.Brush, 'Linear', { 0.0: 'white', 1.0: '#de5e60' }),
+              fill: $(go.Brush, 'Linear', { 0.0: 'white', 1.0: '#de5e60' })
             },
             new go.Binding('figure', 'fig'),
             new go.Binding('width'),
-            new go.Binding('height'),
+            new go.Binding('height')
           ),
           $(
             go.TextBlock,
@@ -84,7 +84,7 @@ export default {
 
               width: 80,
               background: '#f00',
-              visible: false,
+              visible: false
             },
             new go.Binding('text').makeTwoWay(),
             new go.Binding('alignment', '', (data, item) => {
@@ -103,7 +103,7 @@ export default {
               const figureFunc = go.Shape.getFigureGenerators().get(mainElt.figure)
               const geo = figureFunc(mainElt, mainElt.width, mainElt.height)
               return !!geo.leftWidth
-            }),
+            })
           ),
           $(
             go.TextBlock,
@@ -118,7 +118,7 @@ export default {
               wrap: go.TextBlock.WrapBreakAll,
 
               width: 80,
-              background: 'lightblue',
+              background: 'lightblue'
             },
             new go.Binding('text', 'subText').makeTwoWay(),
             new go.Binding('alignment', '', (data, item) => {
@@ -131,23 +131,23 @@ export default {
               const figureFunc = go.Shape.getFigureGenerators().get(mainElt.figure)
               const geo = figureFunc(mainElt, mainElt.width, mainElt.height)
               return data.width - (geo.leftWidth | 0) - mainElt.strokeWidth
-            }),
-          ),
-        ),
+            })
+          )
+        )
       )
       const nodeDataArray = [
         { text: '百成', subText: '程序员', width: 100, height: 40, fig: 'Rectangle' },
         { text: '百成', subText: '程序员', width: 100, height: 40, fig: 'G-RoundedRectangle' },
         { text: '百成', subText: '程序员', width: 100, height: 40, fig: 'B_BusinessArea' },
         { text: '百成', subText: '程序员', width: 100, height: 40, fig: 'B-Flow' },
-        { text: '百成123', subText: '程序员', width: 100, height: 40, fig: 'BU_FC_CostChain' },
+        { text: '百成123', subText: '程序员', width: 100, height: 40, fig: 'BU_FC_CostChain' }
       ]
       diagram.model = new go.Model(nodeDataArray)
     },
     _setToolManager () {
       const toolManager = this.diagram.toolManager
       this.diagram.toolManager = Object.assign(toolManager, {
-        textEditingTool: new TextEditingTool(),
+        textEditingTool: new TextEditingTool()
       })
     },
     _setFunc () {
@@ -175,8 +175,8 @@ export default {
           }
         }
       }
-    },
-  },
+    }
+  }
 }
 </script>
 

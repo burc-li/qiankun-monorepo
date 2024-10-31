@@ -30,7 +30,7 @@ export default {
       // 视图
       const myDiagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       // 模型
@@ -39,7 +39,7 @@ export default {
       myModel.nodeDataArray = [
         { key: 'A', name: '柏成', img: img01 },
         { key: 'B', parent: 'A', name: '花生', img: img02 },
-        { key: 'C', parent: 'A', name: '周南', img: img03 },
+        { key: 'C', parent: 'A', name: '周南', img: img03 }
       ]
 
       // 给视图添加模型
@@ -62,7 +62,7 @@ export default {
           'RoundedRectangle', // string argument can name a predefined figure
           {}, // set Shape properties here
           // example Shape binding sets Shape.figure to the value of Node.data.fig
-          new go.Binding('figure', 'fig'),
+          new go.Binding('figure', 'fig')
         ),
 
         $(
@@ -72,7 +72,7 @@ export default {
           // or when the image is partially transparent.
           { margin: 12, width: 50, height: 50, background: 'red' },
           // Picture.source is data bound to the "source" attribute of the model data
-          new go.Binding('source', 'img'),
+          new go.Binding('source', 'img')
         ),
 
         $(
@@ -80,11 +80,11 @@ export default {
           'default text', // string argument can be initial text string
           { margin: 12, stroke: 'white', font: 'bold 16px sans-serif' }, // set TextBlock properties here
           // example TextBlock binding sets TextBlock.text to the value of Node.data.name
-          new go.Binding('text', 'name'),
-        ),
+          new go.Binding('text', 'name')
+        )
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

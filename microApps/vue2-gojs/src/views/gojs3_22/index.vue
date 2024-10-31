@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -55,11 +55,11 @@ export default {
           go.Panel,
           'Auto',
           $(go.Shape, 'Ellipse', new go.Binding('fill', 'color')),
-          $(go.TextBlock, new go.Binding('text', 'key')),
+          $(go.TextBlock, new go.Binding('text', 'key'))
         ),
         $('Button', { alignment: go.Spot.TopRight }, $(go.Shape, 'Rectangle', { width: 8, height: 8 }), {
-          click: changeCategory,
-        }),
+          click: changeCategory
+        })
       )
 
       // The "detailed" template shows all of the information in a Table Panel.
@@ -78,17 +78,17 @@ export default {
             $(
               go.TextBlock,
               { row: 0, column: 0, columnSpan: 2, font: 'bold 12pt sans-serif' },
-              new go.Binding('text', 'key'),
+              new go.Binding('text', 'key')
             ),
             $(go.TextBlock, { row: 1, column: 0 }, 'Description:'),
             $(go.TextBlock, { row: 1, column: 1 }, new go.Binding('text', 'desc')),
             $(go.TextBlock, { row: 2, column: 0 }, 'Color:'),
-            $(go.TextBlock, { row: 2, column: 1 }, new go.Binding('text', 'color')),
-          ),
+            $(go.TextBlock, { row: 2, column: 1 }, new go.Binding('text', 'color'))
+          )
         ),
         $('Button', { alignment: go.Spot.TopRight }, $(go.Shape, 'Rectangle', { width: 8, height: 8 }), {
-          click: changeCategory,
-        }),
+          click: changeCategory
+        })
       )
 
       const templmap = new go.Map() // In TypeScript you could write: new go.Map<string, go.Node>();
@@ -101,14 +101,14 @@ export default {
       diagram.model.nodeDataArray = [
         { key: 'Beta', desc: 'second letter', color: 'lightblue', category: 'simple' },
         { key: 'Gamma', desc: 'third letter', color: 'pink', category: 'detailed' },
-        { key: 'Delta', desc: 'fourth letter', color: 'cyan', category: 'detailed' },
+        { key: 'Delta', desc: 'fourth letter', color: 'cyan', category: 'detailed' }
       ]
       diagram.model.linkDataArray = [
         { from: 'Beta', to: 'Gamma' },
-        { from: 'Gamma', to: 'Delta' },
+        { from: 'Gamma', to: 'Delta' }
       ]
-    },
-  },
+    }
+  }
 }
 </script>
 

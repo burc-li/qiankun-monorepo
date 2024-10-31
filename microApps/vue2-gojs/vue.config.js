@@ -7,13 +7,13 @@ module.exports = defineConfig({
   devServer: {
     port: 8001,
     headers: {
-      'Access-Control-Allow-Origin': '*',
-    },
+      'Access-Control-Allow-Origin': '*'
+    }
   },
   configureWebpack: {
     output: {
       libraryTarget: 'umd',
-      library: `${packageName}`,
-    },
-  },
+      library: `${packageName}`
+    }
+  }
 })

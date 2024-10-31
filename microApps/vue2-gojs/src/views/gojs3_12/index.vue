@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -35,7 +35,7 @@ export default {
         go.Node,
         'Auto',
         $(go.Shape, 'Ellipse', { fill: 'white' }),
-        $(go.TextBlock, new go.Binding('text', 'key')),
+        $(go.TextBlock, new go.Binding('text', 'key'))
       )
 
       diagram.groupTemplate = $(
@@ -47,18 +47,18 @@ export default {
           $(
             go.Shape,
             'RoundedRectangle', // 围绕着占位符Placeholder
-            { parameter1: 4, fill: 'rgba(128,128,128,0.33)' },
+            { parameter1: 4, fill: 'rgba(128,128,128,0.33)' }
           ),
           $(
             go.Placeholder, // 占位符,表示所有构件的面积，
-            { padding: 5 },
-          ), // 添加内边距
+            { padding: 5 }
+          ) // 添加内边距
         ),
         $(
           go.TextBlock, // group title
           { alignment: go.Spot.Right, font: 'Bold 12pt Sans-Serif' },
-          new go.Binding('text', 'key'),
-        ),
+          new go.Binding('text', 'key')
+        )
       )
 
       const nodeDataArray = [
@@ -66,16 +66,16 @@ export default {
         { key: 'Beta', group: 'Omega' },
         { key: 'Gamma', group: 'Omega' },
         { key: 'Omega', isGroup: true },
-        { key: 'Delta' },
+        { key: 'Delta' }
       ]
       const linkDataArray = [
         { from: 'Alpha', to: 'Beta' }, // from outside the Group to inside it
         { from: 'Beta', to: 'Gamma' }, // this link is a member of the Group
-        { from: 'Omega', to: 'Delta' }, // from the Group to a Node
+        { from: 'Omega', to: 'Delta' } // from the Group to a Node
       ]
       diagram.model = new go.GraphLinksModel(nodeDataArray, linkDataArray)
-    },
-  },
+    }
+  }
 }
 </script>
 

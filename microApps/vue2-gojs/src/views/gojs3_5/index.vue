@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       diagram.nodeTemplate = $(
@@ -40,9 +40,9 @@ export default {
             'Auto',
             { margin: 2 },
             $(go.Shape, 'RoundedRectangle', { fill: '#91E3E0' }, new go.Binding('fill', 'c')),
-            $(go.TextBlock, new go.Binding('text', 't'), { margin: 2 }),
-          ),
-        }),
+            $(go.TextBlock, new go.Binding('text', 't'), { margin: 2 })
+          )
+        })
       )
 
       diagram.model = $(go.GraphLinksModel, {
@@ -53,18 +53,18 @@ export default {
               { t: 'Alpha', c: 'orange' },
               { t: 'Beta' },
               { t: 'Gamma', c: 'green' },
-              { t: 'Delta', c: 'yellow' },
-            ],
+              { t: 'Delta', c: 'yellow' }
+            ]
           },
           {
             key: 2,
-            items: [{ t: 'first', c: 'red' }, { t: 'second', c: 'cyan' }, { t: 'third' }],
-          },
+            items: [{ t: 'first', c: 'red' }, { t: 'second', c: 'cyan' }, { t: 'third' }]
+          }
         ],
-        linkDataArray: [{ from: 1, to: 2 }],
+        linkDataArray: [{ from: 1, to: 2 }]
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

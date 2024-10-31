@@ -5,14 +5,14 @@ import * as go from 'gojs'
  * @param {Strign —> Point} offset 整体偏移量
  * @param {Strign -> Size} spacing 节点之间的距离
  */
-export function MyGridLayout({ columns = 3, offset = '10 10', spacing = '10 10' }) {
+export function MyGridLayout ({ columns = 3, offset = '10 10', spacing = '10 10' }) {
   go.CircularLayout.call(this)
   this._columns = columns
   this._offset = go.Point.parse(offset)
   this._spacing = go.Size.parse(spacing)
 }
 go.Diagram.inherit(MyGridLayout, go.Layout)
-MyGridLayout.prototype.doLayout = function(coll) {
+MyGridLayout.prototype.doLayout = function (coll) {
   // get the Nodes and Links to be laid out
   const it = this.collectParts(coll).iterator
   // Start the layout at the arrangement origin, a property inherited from Layout
@@ -28,7 +28,7 @@ MyGridLayout.prototype.doLayout = function(coll) {
   }
 }
 // 获取网格布局节点的X轴值
-MyGridLayout.prototype.getGridX = function(index, node, coll) {
+MyGridLayout.prototype.getGridX = function (index, node, coll) {
   const maxWidth = this.getMaxWidth(coll)
   const currWidth = node.desiredSize.width
   const currCol = index % this._columns
@@ -37,7 +37,7 @@ MyGridLayout.prototype.getGridX = function(index, node, coll) {
   return x + offset
 }
 // 获取网格布局节点的Y轴值
-MyGridLayout.prototype.getGridY = function(index, node, coll) {
+MyGridLayout.prototype.getGridY = function (index, node, coll) {
   const maxHeight = this.getMaxHeight(coll)
   const currHeight = node.desiredSize.height
   const currRow = Math.floor(index / this._columns)
@@ -46,14 +46,14 @@ MyGridLayout.prototype.getGridY = function(index, node, coll) {
   return y + offset
 }
 // 获取node最大宽度
-MyGridLayout.prototype.getMaxWidth = function(coll) {
+MyGridLayout.prototype.getMaxWidth = function (coll) {
   const widthList = coll._dataArray.map(item => {
     return item instanceof go.Node ? item.desiredSize.width : 0
   })
   return Math.max(...widthList)
 }
 // 获取node最大高度
-MyGridLayout.prototype.getMaxHeight = function(coll) {
+MyGridLayout.prototype.getMaxHeight = function (coll) {
   const heightList = coll._dataArray.map(item => {
     return item instanceof go.Node ? item.desiredSize.height : 0
   })
@@ -66,7 +66,7 @@ MyGridLayout.prototype.getMaxHeight = function(coll) {
  * @param {Strign —> Point} center 圆心
  * @param {Object} container 父容器
  */
-export function MyCircularLayout({ radius = 20, center = '0 0', offset = '0 0', container = null }) {
+export function MyCircularLayout ({ radius = 20, center = '0 0', offset = '0 0', container = null }) {
   go.CircularLayout.call(this)
   this._offset = go.Point.parse(offset)
   this._container = container
@@ -74,7 +74,7 @@ export function MyCircularLayout({ radius = 20, center = '0 0', offset = '0 0', 
   this._center = container ? this.getCenterXY() : go.Point.parse(center).add(new go.Point(-radius, -radius))
 }
 go.Diagram.inherit(MyCircularLayout, go.Layout)
-MyCircularLayout.prototype.doLayout = function(coll, sec) {
+MyCircularLayout.prototype.doLayout = function (coll, sec) {
   // get the Nodes and Links to be laid out
   const it = this.collectParts(coll).iterator
   // Start the layout at the arrangement origin, a property inherited from Layout
@@ -92,12 +92,12 @@ MyCircularLayout.prototype.doLayout = function(coll, sec) {
   }
 }
 // 获取圆形布局原点坐标
-MyCircularLayout.prototype.getCenterXY = function() {
+MyCircularLayout.prototype.getCenterXY = function () {
   const layoutBox = this._container.findObject('layoutBox')
   return new go.Point(layoutBox.width / 2 - this._radius, layoutBox.height / 2 - this._radius)
 }
 // 获取圆形布局节点的X轴值
-MyCircularLayout.prototype.getCircularX = function(index, baseAngle, node) {
+MyCircularLayout.prototype.getCircularX = function (index, baseAngle, node) {
   const widthSelf = node.desiredSize.width
   const angle = baseAngle * index
   const radian = (angle * 2 * Math.PI) / 360
@@ -105,7 +105,7 @@ MyCircularLayout.prototype.getCircularX = function(index, baseAngle, node) {
   return x + this._offset.x
 }
 // 获取圆形布局节点的Y轴值
-MyCircularLayout.prototype.getCircularY = function(index, baseAngle, node) {
+MyCircularLayout.prototype.getCircularY = function (index, baseAngle, node) {
   const heightSelf = node.desiredSize.height
   const angle = baseAngle * index
   const radian = (angle * 2 * Math.PI) / 360
@@ -113,12 +113,12 @@ MyCircularLayout.prototype.getCircularY = function(index, baseAngle, node) {
   return y + this._offset.y
 }
 // 获取node数量
-MyCircularLayout.prototype.nodeCount = function(coll) {
+MyCircularLayout.prototype.nodeCount = function (coll) {
   const nodeList = coll._dataArray.filter(item => item instanceof go.Node)
   return nodeList.length
 }
 // 获取link数量
-MyCircularLayout.prototype.linkCount = function(coll) {
+MyCircularLayout.prototype.linkCount = function (coll) {
   const linkList = coll._dataArray.filter(item => item instanceof go.Link)
   return linkList.length
 }

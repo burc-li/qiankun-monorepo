@@ -69,7 +69,7 @@ const getPartBounds = function (part, strokeSpot, result) {
       (result.x + strokeWidth * strokeSpot.x) | 0,
       (result.y + strokeWidth * strokeSpot.y) | 0,
       width,
-      height,
+      height
     )
   } else {
     ensureTempBounds(result, angle, strokeWidth, strokeSpot)
@@ -87,7 +87,7 @@ const ensureTempBounds = function (actualBounds, angle, strokeWidth, strokeSpot)
     actualBounds.x + strokeWidth * strokeSpot.x,
     actualBounds.y + strokeWidth * strokeSpot.y,
     actualBounds.width - strokeWidth * strokeSpot.x * 2,
-    actualBounds.height - strokeWidth * strokeSpot.y * 2,
+    actualBounds.height - strokeWidth * strokeSpot.y * 2
   )
   return actualBounds
 }

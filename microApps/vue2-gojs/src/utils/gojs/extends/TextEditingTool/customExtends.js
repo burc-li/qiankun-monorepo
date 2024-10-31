@@ -9,6 +9,6 @@ go.GraphObject.prototype.getDocumentNaturalBounds = function () {
     docunemtBounds.centerX - naturalBounds.width / 2,
     docunemtBounds.centerY - naturalBounds.height / 2,
     naturalBounds.width,
-    naturalBounds.height,
+    naturalBounds.height
   )
 }

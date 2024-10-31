@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
 
       diagram.add(
@@ -42,7 +42,7 @@ export default {
             height: 100,
             margin: 5,
             // A linear gradient brush from blue to red, going from top to bottom (default)
-            fill: $(go.Brush, 'Linear', { 0.0: 'rgba(0,255,0,.3)', 1.0: '#de5e60' }),
+            fill: $(go.Brush, 'Linear', { 0.0: 'rgba(0,255,0,.3)', 1.0: '#de5e60' })
           }),
           $(go.Shape, {
             row: 0,
@@ -52,7 +52,7 @@ export default {
             height: 100,
             margin: 5,
             // A linear gradient brush from blue to red, going from top to bottom (default)
-            fill: $(go.Brush, 'Radial', { 0.0: 'rgba(0,255,0,.3)', 1.0: '#de5e60' }),
+            fill: $(go.Brush, 'Radial', { 0.0: 'rgba(0,255,0,.3)', 1.0: '#de5e60' })
           }),
 
           $(go.Shape, {
@@ -68,13 +68,13 @@ export default {
               0.0: 'rgba(0,255,0,.3)',
               1.0: '#de5e60',
               start: go.Spot.Bottom,
-              end: go.Spot.Top,
-            }),
-          }),
-        ),
+              end: go.Spot.Top
+            })
+          })
+        )
       )
-    },
-  },
+    }
+  }
 }
 </script>
 

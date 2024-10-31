@@ -28,7 +28,7 @@ RotateMultipleTool.prototype.doActivate = function () {
   this.startDocumentPoint = this.handle.part.location
   this.handlePoint = new go.Point(
     partActualBounds.x - partNaturalBounds.centerX - 10 / this.diagram.scale,
-    partActualBounds.y - partNaturalBounds.centerY - 10 / this.diagram.scale,
+    partActualBounds.y - partNaturalBounds.centerY - 10 / this.diagram.scale
   )
   if (diagram === null) return
   const validSelection = diagram.selection.filter(node => {
@@ -166,7 +166,7 @@ RotateMultipleTool.prototype.rotate = function (newangle) {
       part.angle = targetAngle
       const loc = new go.Point(
         fx * (info.relativeLocation.x + origsz.width / 2),
-        fy * (info.relativeLocation.y + origsz.height / 2),
+        fy * (info.relativeLocation.y + origsz.height / 2)
       )
       const dist = Math.sqrt(newcntr.distanceSquaredPoint(loc))
       const dir = newcntr.directionPoint(loc)
@@ -228,7 +228,7 @@ RotateMultipleTool.prototype.showTip = function () {
     node.location.y +
       (1 - node.locationSpot.y) * bounds.height +
       Math.floor((1 - node.locationSpot.y) * (tipHeight / this.diagram.scale)) +
-      5,
+      5
   )
   if (!partData) {
     this.diagram.isRotating = true
@@ -237,7 +237,7 @@ RotateMultipleTool.prototype.showTip = function () {
       // 唯一的key值
       key: 'toolTipRotate',
       loc: x + ' ' + y,
-      label: Math.round(angle) + '°',
+      label: Math.round(angle) + '°'
     }
     if (this.diagram.findLayer('').opacity !== 1) {
       this.diagram.layers.each(layer => {

@@ -43,7 +43,7 @@ export default {
             // default values if the data.highlight is undefined:
             fill: 'yellow',
             stroke: 'orange',
-            strokeWidth: 2,
+            strokeWidth: 2
           },
           new go.Binding('fill', 'highlight', function (v) {
             return v ? 'pink' : 'lightblue'
@@ -53,13 +53,13 @@ export default {
           }),
           new go.Binding('strokeWidth', 'highlight', function (v) {
             return v ? 3 : 1
-          }),
+          })
         ),
-        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 5 }, new go.Binding('text', 'key'))
       )
 
       diagram.model.nodeDataArray = [
-        { key: 'Alpha', highlight: false }, // just one node, and no links
+        { key: 'Alpha', highlight: false } // just one node, and no links
       ]
 
       function flash () {
@@ -78,8 +78,8 @@ export default {
       }
 
       loop()
-    },
-  },
+    }
+  }
 }
 </script>
 

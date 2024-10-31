@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -37,7 +37,7 @@ export default {
         // { isTreeExpanded: false },
         new go.Binding('text', 'key'),
         $(go.Panel, 'Auto', $(go.Shape, 'Ellipse', { fill: null }), $(go.TextBlock, new go.Binding('text', 'key'))),
-        $('TreeExpanderButton'),
+        $('TreeExpanderButton')
       )
 
       diagram.linkTemplate = $(go.Link, { routing: go.Link.Orthogonal, corner: 5 }, $(go.Shape))
@@ -51,7 +51,7 @@ export default {
         { key: 'Zeta', parent: 'Epsilon' },
         { key: 'Eta', parent: 'Epsilon' },
         { key: 'Theta', parent: 'Epsilon' },
-        { key: 'burc', parent: 'Delta' },
+        { key: 'burc', parent: 'Delta' }
       ]
       diagram.model = new go.TreeModel(nodeDataArray)
 
@@ -60,10 +60,10 @@ export default {
         layerSpacing: 30,
         nodeSpacing: 20,
         alignment: go.TreeLayout.AlignmentStart,
-        sorting: go.TreeLayout.SortingAscending,
+        sorting: go.TreeLayout.SortingAscending
       })
-    },
-  },
+    }
+  }
 }
 </script>
 

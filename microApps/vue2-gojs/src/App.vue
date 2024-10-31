@@ -22,21 +22,21 @@
 <script>
 export default {
   components: {},
-  provide() {
+  provide () {
     return {
-      reload: this.reload,
-    };
+      reload: this.reload
+    }
   },
-  data() {
+  data () {
     return {
-      isRouterAlive: true,
-    };
+      isRouterAlive: true
+    }
   },
 
   computed: {},
 
-  methods: {},
-};
+  methods: {}
+}
 </script>
 
 <style rel="stylesheet/less" lang="less" scoped>

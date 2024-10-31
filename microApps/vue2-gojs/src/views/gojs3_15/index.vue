@@ -27,7 +27,7 @@ export default {
       // 视图
       const diagram = $(go.Diagram, 'myDiagramDiv', {
         // enable Ctrl-Z to undo and Ctrl-Y to redo
-        'undoManager.isEnabled': true,
+        'undoManager.isEnabled': true
       })
       diagram.grid.visible = true
 
@@ -36,26 +36,26 @@ export default {
         'Auto',
         new go.Binding('location', 'loc', go.Point.parse),
         $(go.Shape, 'RoundedRectangle', { strokeWidth: 0 }, new go.Binding('fill', 'color')),
-        $(go.TextBlock, { margin: 8 }, new go.Binding('text', 'key')),
+        $(go.TextBlock, { margin: 8 }, new go.Binding('text', 'key'))
       )
       diagram.linkTemplate = $(
         go.Link,
         $(go.Shape, { strokeWidth: 2 }),
         // The label
         $(go.Shape, 'Circle', { segmentIndex: 0, width: 15, height: 15, fill: 'red', strokeWidth: 2 }),
-        $(go.Shape, { toArrow: 'Standard' }),
+        $(go.Shape, { toArrow: 'Standard' })
       )
       diagram.model = new go.GraphLinksModel(
         [
           { key: 'Alpha', color: 'lightblue', loc: '0 0' },
           { key: 'Gamma', color: 'lightgreen', loc: '400 0' },
-          { key: 'Delta', color: 'pink', loc: '0 200' },
+          { key: 'Delta', color: 'pink', loc: '0 200' }
         ],
         [
           { from: 'Alpha', to: 'Gamma' },
           { from: 'Gamma', to: 'Delta' },
-          { from: 'Delta', to: 'Alpha' },
-        ],
+          { from: 'Delta', to: 'Alpha' }
+        ]
       )
       // This presumes the object to be animated is a label within a Link
       go.AnimationManager.defineAnimationEffect('fraction', function (
@@ -65,7 +65,7 @@ export default {
         easing,
         currentTime,
         duration,
-        animation,
+        animation
       ) {
         obj.segmentFraction = easing(currentTime, startValue, endValue - startValue, duration)
       })
@@ -81,8 +81,8 @@ export default {
         })
       }
       window.animateColorAndFraction()
-    },
-  },
+    }
+  }
 }
 </script>
 

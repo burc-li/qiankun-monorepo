@@ -25,6 +25,6 @@ export default () => {
     // 全局设置<router-link></router-link>上的class  部分匹配就会有 class="active-link"
     linkActiveClass: 'active-link',
     // 全局设置<router-link></router-link>上的class 只有精确匹配才会有 class="exact-active-link"
-    linkExactActiveClass: 'exact-active-link',
+    linkExactActiveClass: 'exact-active-link'
   })
 }
