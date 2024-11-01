@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="btn" @click="capture">使用 html2canvas 进行屏幕截屏</div>
+    <Button type="primary" @click="capture">使用 html2canvas 进行屏幕截屏</Button>
     <section v-for="(item, index) in pageList" :key="index">
       <p class="text">{{ index }} - {{ item.text }}</p>
       <img class="image" crossorigin="anonymous" :src="item.src" />
@@ -9,6 +9,8 @@
 </template>
 <script setup>
 import { ref, onBeforeMount } from 'vue'
+import { Button } from '@libc/desgin3'
+
 import html2canvas from 'html2canvas'
 import { myBase64 } from '@/utils/contant.js'
 
@@ -40,21 +42,13 @@ onBeforeMount(() => {
 <style lang="less" scoped>
 .container {
   padding: 14px 16px;
-
-  .btn {
-    display: inline-block;
-    padding: 8px 12px;
-    margin-bottom: 12px;
-    color: #fff;
-    border-radius: 2px;
-    border: 1px solid #2d8cf0;
-    background-color: #2d8cf0;
-    cursor: pointer;
-  }
   .text {
     line-height: 1.5em;
     margin-bottom: 16px;
     word-break: break-all;
+  }
+  section:nth-of-type(1){
+    margin-top: 18px;
   }
   .image {
     width: 100%;

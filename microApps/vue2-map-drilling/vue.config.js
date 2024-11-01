@@ -18,4 +18,13 @@ module.exports = defineConfig({
       library: `${packageName}-[name]`,
     },
   },
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true,
+        },
+      },
+    },
+  },
 })

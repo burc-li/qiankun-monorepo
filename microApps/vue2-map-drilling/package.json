@@ -7,7 +7,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint-ext": "eslint --ext .js --ext .jsx --ext .vue src/",
-    "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue src/"
+    "lint": "eslint --fix --ext .js --ext .jsx --ext .vue src/"
   },
   "husky": {
     "hooks": {
@@ -28,7 +28,26 @@
     "vue": "^2.6.14",
     "vue-router": "^3.6.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@eslint/js": "^9.13.0",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "eslint": "8.57.1",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.6.0",
+    "eslint-plugin-vue": "^9.30.0",
+    "globals": "^15.11.0",
+    "less": "^4.2.0",
+    "less-loader": "^12.2.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^3.3.3",
+    "vue-template-compiler": "^2.6.14"
+  },
   "eslintConfig": {
     "root": true,
     "env": {

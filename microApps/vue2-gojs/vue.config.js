@@ -19,5 +19,14 @@ module.exports = defineConfig({
       libraryTarget: 'umd',
       library: `${packageName}`
     }
+  },
+  css: {
+    loaderOptions: {
+      less: {
+        lessOptions: {
+          javascriptEnabled: true
+        }
+      }
+    }
   }
 })

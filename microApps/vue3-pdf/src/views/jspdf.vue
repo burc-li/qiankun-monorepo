@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <div class="btn" @click="downLoadPdfA4Single">下载一页PDF（A4纸）</div>
-    <div class="btn" @click="downLoadPdfA4Multiple">下载多页PDF（A4纸）</div>
-    <div class="btn" @click="downLoadPdfAutoSingle">
+    <Button type="primary" @click="downLoadPdfA4Single">下载一页PDF（A4纸）</Button>
+    <Button type="primary"  @click="downLoadPdfA4Multiple">下载多页PDF（A4纸）</Button>
+    <Button type="primary"  @click="downLoadPdfAutoSingle">
       下载一页PDF（自适应纸）
-    </div>
-    <div class="btn" @click="downLoadPdfAutoMultiple">
+    </Button>
+    <Button type="primary"  @click="downLoadPdfAutoMultiple">
       下载多页PDF（自适应纸）
-    </div>
+    </Button>
     <section v-for="(item, index) in pageList" :key="index">
       <p class="text">{{ index }} - {{ item.text }}</p>
       <img class="image" :src="item.src" />
@@ -16,6 +16,8 @@
 </template>
 <script setup>
 import { ref, onBeforeMount } from 'vue'
+import { Button } from '@libc/desgin3'
+
 import html2canvas from 'html2canvas'
 import { jsPDF } from 'jspdf'
 import { myBase64 } from '@/utils/contant.js'
@@ -170,16 +172,11 @@ onBeforeMount(() => {
 .container {
   padding: 14px 16px;
 
-  .btn {
-    display: inline-block;
-    padding: 8px 12px;
+  .ivu-btn {
     margin-right: 12px;
-    margin-bottom: 12px;
-    color: #fff;
-    border-radius: 2px;
-    border: 1px solid #2d8cf0;
-    background-color: #2d8cf0;
-    cursor: pointer;
+  }
+  section:nth-of-type(1){
+    margin-top: 18px;
   }
   .text {
     line-height: 1.5em;

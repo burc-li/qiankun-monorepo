@@ -13,6 +13,7 @@
     "go": "readonly" // 自定义全局变量 myGlobalVar，只读
   },
   "rules": {
+    "no-console": "off",
     "no-unused-vars": "off",
     "no-var": "off",
     "no-redeclare": "off",

@@ -1,5 +1,5 @@
 {
-  "name": "@libc/function",
+  "name": "@libc/utils",
   "version": "1.0.0",
   "description": "项目共用函数库",
   "main": "src/index.js",

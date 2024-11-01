@@ -1,5 +1,6 @@
 <template>
   <div class="app micro-app">
+    <Button></Button>
     <transition mode="out-in" name="fade">
       <router-view />
     </transition>
@@ -7,8 +8,12 @@
 </template>
 
 <script>
+import { array2Object } from '@libc/utils'
 export default {
   name: 'App',
+  mounted () {
+    console.log('共享方法库__utils.array2Object', array2Object)
+  },
 }
 </script>
 
