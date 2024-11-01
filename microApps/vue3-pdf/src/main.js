@@ -9,15 +9,18 @@ import createRouter from './router'
 import './assets/index.css'
 import './assets/variable.less'
 
-let app
-let router
+let instance = null
+
+// 顶层作用域，如果写在 render 函数内部，重新挂载会报错
+const router = createRouter()
+
 function render(props) {
-  app = createApp(App)
-  router = createRouter()
-  app.use(router)
+  instance = createApp(App)
+
+  instance.use(router)
 
   const container = props.container
-  app.mount(container ? container.querySelector('#app') : '#app')
+  instance.mount(container ? container.querySelector('#app') : '#app')
 }
 
 if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
@@ -28,16 +31,15 @@ if (!qiankunWindow.__POWERED_BY_QIANKUN__) {
 } else {
   renderWithQiankun({
     mount(props) {
+      console.log('mount')
       render(props)
     },
     bootstrap() {
       console.log('bootstrap')
     },
     unmount() {
-      console.log('unmount')
-      app.unmount()
-      app = null
-      router = null
+      instance.unmount()
+      instance = null
     },
   })
 }
