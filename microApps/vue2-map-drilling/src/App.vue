@@ -1,6 +1,9 @@
 <template>
   <div class="app micro-app">
-    <Button></Button>
+    <section class="absolut">
+      点击按钮，调用模块联邦的弹窗
+      <button>按钮</button>
+    </section>
     <transition mode="out-in" name="fade">
       <router-view />
     </transition>
@@ -41,6 +44,15 @@ export default {
   .fade-leave-to {
     opacity: 0;
     transform: translateX(20px);
+  }
+  .absolut{
+    position: absolute;
+    top: 30px;
+    left: 20px;
+    button{
+      margin-left: 10px;
+      cursor: pointer;
+    }
   }
 }
 </style>

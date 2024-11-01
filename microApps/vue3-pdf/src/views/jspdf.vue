@@ -1,11 +1,18 @@
 <template>
   <div class="container">
-    <Button type="primary" @click="downLoadPdfA4Single">下载一页PDF（A4纸）</Button>
-    <Button type="primary"  @click="downLoadPdfA4Multiple">下载多页PDF（A4纸）</Button>
-    <Button type="primary"  @click="downLoadPdfAutoSingle">
+    <h3>
+      以下按钮引用的是@libc/desgin3组件库的(仅支持vue3)，monorepo工作空间下的项目都可以使用
+    </h3>
+    <Button type="primary" @click="downLoadPdfA4Single"
+      >下载一页PDF（A4纸）</Button
+    >
+    <Button type="primary" @click="downLoadPdfA4Multiple"
+      >下载多页PDF（A4纸）</Button
+    >
+    <Button type="primary" @click="downLoadPdfAutoSingle">
       下载一页PDF（自适应纸）
     </Button>
-    <Button type="primary"  @click="downLoadPdfAutoMultiple">
+    <Button type="primary" @click="downLoadPdfAutoMultiple">
       下载多页PDF（自适应纸）
     </Button>
     <section v-for="(item, index) in pageList" :key="index">
@@ -171,11 +178,14 @@ onBeforeMount(() => {
 <style lang="less" scoped>
 .container {
   padding: 14px 16px;
-
+  h3 {
+    margin-bottom: 12px;
+    font-size: 22px;
+  }
   .ivu-btn {
     margin-right: 12px;
   }
-  section:nth-of-type(1){
+  section:nth-of-type(1) {
     margin-top: 18px;
   }
   .text {
