@@ -20,8 +20,9 @@ const navigateTo = path => {
 
 onMounted(
   setTimeout(() => {
-    console.log('routes[0].path', routes[0].path)
-    window.history.pushState({}, '', routes[0].path)
+    if(router.currentRoute.value.path === '/'){
+      window.history.pushState({}, '', routes[0].path)
+    }
   }, 0)
 )
 </script>
@@ -56,6 +57,8 @@ onMounted(
     height: @navHeight;
     padding: 0 16px;
     cursor: pointer;
+    font-size: 16px;
+    font-family: 'Microsoft YaHei';
     &:hover {
       color: #2d8cf0;
       background-color: rgba(0, 0, 0, 0.05);
