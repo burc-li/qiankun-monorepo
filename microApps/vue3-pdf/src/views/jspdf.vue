@@ -1,8 +1,5 @@
 <template>
   <div class="container">
-    <h3>
-      以下按钮引用的是@libc/desgin3组件库的(组件库仅支持vue3)，monorepo工作空间下的项目都可以使用@libc/desgin3组件库
-    </h3>
     <Button type="primary" @click="downLoadPdfA4Single"
       >下载一页PDF（A4纸）</Button
     >
@@ -16,7 +13,7 @@
       下载多页PDF（自适应纸）
     </Button>
     <section v-for="(item, index) in pageList" :key="index">
-      <p class="text">{{ index }} - {{ item.text }}</p>
+      <h3 class="text">{{ index }} - {{ item.text }}</h3>
       <img class="image" :src="item.src" />
     </section>
   </div>
@@ -165,7 +162,7 @@ const downLoadPdfAutoMultiple = () => {
 const number = 20
 const pageList = ref([])
 const paragraph = {
-  text: 'html2canvas 是一个 HTML 渲染器。该脚本允许你直接在用户浏览器截取页面或部分网页的“屏幕截屏”，屏幕截图是基于 DOM，因此生成的图片并不一定 100% 一致，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图，因此生成的图片并不一定 100% 一致，因为它没有制作实际的屏幕截图，而是根据页面上可用的信息构建屏幕截图',
+  text: '以上按钮引用的是@libc/desgin3组件库的(组件库仅支持vue3)，monorepo工作空间下的项目都可以使用@libc/desgin3组件库',
   src: myBase64,
 }
 onBeforeMount(() => {
