@@ -44,6 +44,15 @@ export default [
    */
   {
     files: ['**/*.vue'],
+    languageOptions: {
+      parserOptions: {
+        ecmaVersion: 'latest',
+        /** 允许在.vue 文件中使用 JSX */
+        ecmaFeatures: {
+          jsx: true,
+        },
+      },
+    },
     rules: {
       // 在这里追加 vue 规则
       'vue/multi-word-component-names': 'off',
