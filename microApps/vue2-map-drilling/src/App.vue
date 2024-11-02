@@ -1,9 +1,6 @@
 <template>
   <div class="app micro-app">
-    <section class="absolut">
-      点击按钮，调用模块联邦的弹窗
-      <button>按钮</button>
-    </section>
+    <Header></Header>
     <transition mode="out-in" name="fade">
       <router-view />
     </transition>
@@ -12,8 +9,10 @@
 
 <script>
 import { array2Object } from '@libc/utils'
+import Header from '@/components/Header/index.vue'
 export default {
   name: 'App',
+  components: { Header },
   mounted () {
     console.log('共享方法库__utils.array2Object', array2Object)
   },

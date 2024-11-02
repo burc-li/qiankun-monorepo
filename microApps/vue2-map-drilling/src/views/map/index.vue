@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import MapDrilling from '@/components/MapDrilling'
+import MapDrilling from './MapDrilling'
 export default {
   name: 'Map',
   components: {

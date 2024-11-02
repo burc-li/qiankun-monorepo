@@ -3,6 +3,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import createRouter from '@/router'
 import '@/assets/styles/reset.less'
+import '@/assets/styles/variable.less'
 
 Vue.config.productionTip = false
 
