@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <h3>
-      以下按钮引用的是@libc/desgin3组件库的(仅支持vue3)，monorepo工作空间下的项目都可以使用
+      以下按钮引用的是@libc/desgin3组件库的(组件库仅支持vue3)，monorepo工作空间下的项目都可以使用@libc/desgin3组件库
     </h3>
     <Button type="primary" @click="downLoadPdfA4Single"
       >下载一页PDF（A4纸）</Button
