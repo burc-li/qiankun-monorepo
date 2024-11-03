@@ -1,5 +1,5 @@
 <template>
-  <div class="wrapper">
+  <div class="page404-wrapper">
     <img src="@/assets/logo.png" />
     <p class="title">抱歉，您无权访问该页面</p>
   </div>
@@ -16,8 +16,8 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.wrapper{
-  height: 100vh;
+.page404-wrapper{
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
