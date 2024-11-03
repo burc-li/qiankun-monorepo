@@ -4,6 +4,7 @@ import App from './App.vue'
 import createRouter from '@/router'
 import '@/assets/styles/reset.less'
 import '@/assets/styles/variable.less'
+import 'view-design/dist/styles/iview.css'
 
 Vue.config.productionTip = false
 

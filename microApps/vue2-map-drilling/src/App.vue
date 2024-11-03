@@ -8,14 +8,10 @@
 </template>
 
 <script>
-import { array2Object } from '@libc/utils'
-import Header from '@/components/Header/index.vue'
+import Header from '@/components/Header'
 export default {
   name: 'App',
   components: { Header },
-  mounted () {
-    console.log('共享方法库__utils.array2Object', array2Object)
-  },
 }
 </script>
 

@@ -5,6 +5,7 @@ import './assets/index.css'
 import './assets/variable.less'
 import './registerApps.js'
 
+
 const app = createApp(App)
 
 app.use(router)

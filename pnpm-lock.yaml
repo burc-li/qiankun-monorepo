@@ -29,6 +29,13 @@ importers:
       rimraf:
         specifier: ^6.0.1
         version: 6.0.1
+      view-design:
+        specifier: '4.6'
+        version: 4.6.1(vue@3.5.12(typescript@3.9.10))
+    devDependencies:
+      babel-plugin-import:
+        specifier: ^1.13.3
+        version: 1.13.8
 
   main:
     dependencies:
@@ -435,9 +442,6 @@ importers:
       core-js:
         specifier: ^3.8.3
         version: 3.39.0
-      view-design:
-        specifier: '4.6'
-        version: 4.6.1(vue@2.7.16)
       vue:
         specifier: ^2.6.14
         version: 2.7.16
@@ -463,9 +467,6 @@ importers:
       '@vue/eslint-config-standard':
         specifier: ^6.1.0
         version: 6.1.0(@vue/cli-service@5.0.8(@vue/compiler-sfc@3.5.12)(handlebars@4.7.8)(lodash@4.17.21)(vue-template-compiler@2.7.16)(vue@2.7.16)(webpack-sources@3.2.3))(eslint-plugin-import@2.31.0(eslint@7.32.0))(eslint-plugin-node@11.1.0(eslint@7.32.0))(eslint-plugin-promise@5.2.0(eslint@7.32.0))(eslint-plugin-vue@8.7.1(eslint@7.32.0))(eslint@7.32.0)(webpack@5.96.1)
-      babel-plugin-import:
-        specifier: ^1.13.3
-        version: 1.13.8
       eslint:
         specifier: ^7.32.0
         version: 7.32.0
@@ -20347,6 +20348,18 @@ snapshots:
       tinycolor2: 1.6.0
       v-click-outside-x: 3.7.1
       vue: 2.7.16
+
+  view-design@4.6.1(vue@3.5.12(typescript@3.9.10)):
+    dependencies:
+      async-validator: 3.5.2
+      deepmerge: 2.2.1
+      element-resize-detector: 1.2.4
+      js-calendar: 1.2.3
+      lodash.throttle: 4.1.1
+      popper.js: 1.16.1
+      tinycolor2: 1.6.0
+      v-click-outside-x: 3.7.1
+      vue: 3.5.12(typescript@3.9.10)
 
   vinyl-fs@3.0.3:
     dependencies:
