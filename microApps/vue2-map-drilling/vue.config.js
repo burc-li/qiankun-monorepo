@@ -51,7 +51,7 @@ module.exports = defineConfig({
           remotes: {
             remoteEntry: `promise new Promise(resolve => {
               const name = window.location.pathname.split('/')[1]
-              const origin = window.location.origin + '/' + name
+              const origin = window.location.origin
               // This part depends on how you plan on hosting and versioning your federated modules
               let remoteUrlWithVersion
               const NODE_ENV = origin.indexOf('localhost')>-1
