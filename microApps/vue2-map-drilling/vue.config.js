@@ -50,7 +50,6 @@ module.exports = defineConfig({
           // 作为消费方，使用的时通过 ${remoteEntry}/${expose} 的方式使用， provider 是提供方 library 里的 name
           remotes: {
             remoteEntry: `promise new Promise(resolve => {
-              const name = window.location.pathname.split('/')[1]
               const origin = window.location.origin
               // This part depends on how you plan on hosting and versioning your federated modules
               let remoteUrlWithVersion
